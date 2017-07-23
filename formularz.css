@@ -1,0 +1,25 @@
+form {
+    padding: 10px;;
+}
+
+.form-text {
+    font-size: 21px;
+    font-family: Verdana, snas-serif;
+}
+
+input, textarea{
+    font-size: 21px;
+    font-family: Verdana, snas-serif;
+    color: grey;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 200px;
+}
+
+button {
+    font-size: 21px;
+    font-family: Verdana, snas-serif;
+}
