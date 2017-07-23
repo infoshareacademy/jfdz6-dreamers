@@ -8,8 +8,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/cookies.css">
-    <link rel="stylesheet" href="form.css">
-
+    <link rel="stylesheet" href="css/form.css">
+    <!--Okienko informujące o wysłaniu w dalszej czesci wymienic alert-->
+    <script>
+        if( document.location.href.match(/firstname/) ){ alert('Formularz został wysłany. Dziękujemy'); }
+    </script>
 
 </head>
 <body>
@@ -43,11 +46,11 @@
         </div>
         <div style="background-color:royalblue" class="col-sm-8 text-left">
             <!--Formularz kontaktowy-->
-            <form>
+            <form action="contactus.html?mailsend">
                 <div>
                     <p class="form-text">Wyślij zapytanie.</p>
-                    <div><input type="text" id="firstname" value="imię"></div>
-                    <div><input type="text" id="email" value="adres e-mail"></div>
+                    <div><input type="text" name="firstname" id="firstname" value="imię"></div>
+                    <div><input type="text" name="email" id="email" value="adres e-mail"></div>
                     <div><textarea name="message" id="message">treść wiadomości</textarea></div>
                     <div>
                         <button type="submit" value="send">Wyślij</button>
