@@ -4,12 +4,10 @@ form {
 
 .form-text {
     font-size: 21px;
-    font-family: Verdana, snas-serif;
 }
 
 input, textarea{
     font-size: 21px;
-    font-family: Verdana, snas-serif;
     color: grey;
     width: 400px;
     margin-bottom: 10px;
@@ -21,5 +19,6 @@ textarea {
 
 button {
     font-size: 21px;
-    font-family: Verdana, snas-serif;
+    background-color: black;
+    border-radius: 5px;
 }

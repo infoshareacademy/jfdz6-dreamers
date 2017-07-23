@@ -4,16 +4,25 @@
 
 body {
     background-attachment: fixed;
-    background-image: url("img/event.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.index-page {
+    background-image: url("img/event.jpeg");
+}
 
+.contctus-page {
+    background-image: url("img/contact.jpg");
+}
+
+.aboutus-page {
+    background-image: url("img/aboutus.jpg");
+}
 
 .col-sm-8 {
     background-color: #080808;
-    opacity: 0.90;
+    opacity: 0.75;
     text-align: center;
     font-weight: bold;
     color: white;
@@ -29,7 +38,7 @@ body {
 .fa-rocket {
     color: white;
     float: left;
-    font-size: 2.5em;
+    font-size: 10px;
     margin: 0.25em;
 }
 
@@ -52,4 +61,17 @@ hr {
     position: absolute;
     bottom: 0px;
     width: 100%;
+}
+
+#myCarousel {
+    opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.carouselSize {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
 }
