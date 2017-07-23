@@ -75,3 +75,7 @@ hr {
     height: 300px;
     margin-bottom: 30px;
 }
+
+.navbar {
+    z-index: 1;
+}
