@@ -21,8 +21,8 @@ body {
 }
 
 .col-sm-8 {
-    background-color: #080808;
-    opacity: 0.75;
+    background-image: url("img/semi-transbgtransparent.png");
+    background-repeat: repeat;
     text-align: center;
     font-weight: bold;
     color: white;
