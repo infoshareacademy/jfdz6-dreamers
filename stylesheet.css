@@ -21,20 +21,20 @@ body {
 }
 
 .col-sm-8 {
-    background-image: url("img/semi-transbgtransparent.png");
+    background-color: rgba(0,0,0,0.8);
     background-repeat: repeat;
     text-align: center;
     font-weight: bold;
     color: white;
     border-radius: 4px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0;
+    margin-top: 15px;
 }
 
 .fa-rocket {
     color: white;
     float: left;
-    font-size: 10px;
+    font-size: 15px;
     margin: 0.25em;
 }
 
@@ -72,4 +72,11 @@ hr {
 
 .navbar {
     z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+
+.row {
+    min-height: 88.6vh;
+    margin-top: 50px;
 }
