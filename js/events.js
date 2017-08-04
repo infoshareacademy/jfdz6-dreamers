@@ -2,23 +2,42 @@
  * Created by damianwisniewski on 23.07.17.
  */
 function showResult() {
-    var head = '<div class="row text-center">';
+
+
     var div = "";
-    div += '<div class="col-sm-2">';
-    div += '<div class="thumbnail">';
-    div += '<img src="img/paris.jpg" alt="Paris" width="400" height="300">';
-    div += '<p><strong>Paris</strong></p>';
-    div += '<p>Friday 27 November 2015</p>';
-    div += '<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>';
-    div += '</div>';
 
-    div += '</div>';
 
-    console.log(head);
-    console.log(div);
+    var url = 'http://planer.info.pl/api/rest/events.json?limit=24';
 
-    document.getElementById("demo").innerHTML = head + div;
 
+    //GET JSON
+    var jqxhr = $.getJSON(url, function () {
+        var response = JSON.parse(jqxhr.responseText);
+        var i;
+    console.log('response',response)
+        //LOOP OVER DATA
+        for (i = 0; i < response.length; i++) {
+            div += '<div class="col-sm-3">';
+               div += '<div class="thumbnail">';
+                  div += '<img src="http://lorempixel.com/400/300/nightlife/" width="400" height="300">';
+                   div += '<p class="textThumbnail"><strong>'+response[i]['name']+'</strong></p>';
+                   div += '<p class="textThumbnail">'+response[i]['place']['name']+'</p>';
+                   div += '<p class="textThumbnail">Start: '+response[i]['startDate']+'</p>';
+                   div += '<p class="textThumbnail">Koniec: '+response[i]['endDate']+'</p>';
+                    div += '<form action="'+response[i]['urls']['www']+'">\
+                     <input class="textThumbnail buttonThumbnail" type="submit" value="Strona wydarzenia" />\
+                     </form>';
+                div += '</div>';
+            div += '</div>';
+            div += '</div>';
+
+
+        }
+
+
+        document.getElementById("demo").innerHTML =  div ;
+
+    });
 
 }
 

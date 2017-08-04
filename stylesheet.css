@@ -80,3 +80,15 @@ hr {
     min-height: 88.6vh;
     margin-top: 50px;
 }
+.thumbnail{
+    height: 450px;
+}
+.textThumbnail{
+    font-weight:normal;
+    color: #000000;
+}
+.buttonThumbnail{
+    position: absolute;
+    right:    13%;
+    bottom:   7%;
+}
