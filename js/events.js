@@ -7,14 +7,16 @@ function showResult() {
     var div = "";
 
 
-    var url = 'http://planer.info.pl/api/rest/events.json?limit=24';
+    var urltest = 'http://planer.info.pl/api/rest/events.json?limit=24"';
 
+    var proxy = '../../ba-simple-proxy.php',
+        url = proxy + '?' + urltest.serialize();
 
     //GET JSON
     var jqxhr = $.getJSON(url, function () {
         var response = JSON.parse(jqxhr.responseText);
         var i;
-    console.log('response',response)
+        console.log('response', response);
         //LOOP OVER DATA
         for (i = 0; i < response.length; i++) {
             div += '<div class="col-sm-3">';
