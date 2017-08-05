@@ -10,7 +10,7 @@ function showResult() {
     var urltest = 'http://planer.info.pl/api/rest/events.json?limit=24"';
 
     var proxy = '../../ba-simple-proxy.php',
-        url = proxy + '?' + urltest.serialize();
+        url = proxy + '?' + urltest;
 
     //GET JSON
     var jqxhr = $.getJSON(url, function () {
