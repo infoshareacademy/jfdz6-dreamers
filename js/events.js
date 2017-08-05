@@ -7,13 +7,11 @@ function showResult() {
     var div = "";
 
 
-    var urltest = 'http://planer.info.pl/api/rest/events.json?limit=24"';
+    var urltest = 'http://planer.info.pl/api/rest/events.json?limit=24';
 
-    var proxy = '../../ba-simple-proxy.php',
-        url = proxy + '?' + urltest;
 
     //GET JSON
-    var jqxhr = $.getJSON(url, function () {
+    var jqxhr = $.getJSON(urltest, function () {
         var response = JSON.parse(jqxhr.responseText);
         var i;
         console.log('response', response);
