@@ -1638,7 +1638,7 @@ h6,
 }
 
 p {
-    margin: 0 0 10px;
+    margin: 0 0 0;
 }
 
 .lead {
@@ -5249,7 +5249,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
     float: left;
     height: 50px;
-    padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
 }
@@ -5648,19 +5647,19 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #9d9d9d;
+    color: rgb(157, 111, 19);
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    color: #fff;
+    color: rgb(250, 175, 24);
     background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
+    color: rgb(250, 175, 24);
     background-color: #080808;
 }
 
