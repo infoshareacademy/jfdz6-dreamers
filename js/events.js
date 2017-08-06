@@ -30,9 +30,7 @@ function showResult() {
             div += '<p class="textThumbnail">' + response[i]['place']['name'] + '</p>';
             div += '<p class="textThumbnail">Start: ' + response[i]['startDate'] + '</p>';
             div += '<p class="textThumbnail">Koniec: ' + response[i]['endDate'] + '</p>';
-            div += '<form action="' + response[i]['urls']['www'] + '">\
-                     <button  type="button" class="btn btn-default buttonThumbnail">Strona wydarzenia</button>\
-                     </form>';
+            div += '<button  type="button" class="btn btn-default buttonThumbnail" onclick=" window.open(\'' + response[i]['urls']['www'] + '\',\'_blank\')">Strona wydarzenia</button>';
             div += '</div>';
             div += '</div>';
             div += '</div>';
