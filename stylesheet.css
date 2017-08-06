@@ -88,6 +88,7 @@ hr {
 }
 .buttonThumbnail{
     position: absolute;
-    right:    13%;
-    bottom:   7%;
+    margin-right: 55%;
+    bottom: 10%;
+    transform: translateX(-50%);
 }
