@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+.prod_container {
+    padding: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: yellow;
+    /*float: left;*/
+    /*position: relative;*/
+}
+
+.prod_item {
+    margin: 20px;
+    width: 40%;
+    /*left: 5%;*/
+    /*right:5%;*/
+    float: left;
+    background-color: white;
+    padding: 5px;
+    text-align: left;
+    color: black;
+    /*position: absolute;*/
+}
+
+.prod_clear {
+    clear: both;
+    display: block;
+    /*float: left;*/
+}
