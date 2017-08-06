@@ -8,6 +8,9 @@ body {
     background-size: cover;
 }
 
+.body {
+    min-height: 550px;
+}
 .index-page {
     background-image: url("img/event.jpeg");
 }
