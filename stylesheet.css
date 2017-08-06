@@ -30,26 +30,19 @@ body {
     margin-top: 15px;
 }
 
-.fa-rocket {
-    color: white;
-    float: left;
-    font-size: 15px;
-    margin: 0.25em;
-}
-
-.navbar-brand {
-    font-size: 23px;
-    font-weight: 700;
-}
-
 hr {
     opacity: 0.9;
     background-color: #080808;
 }
 
+.navbar-logo {
+    height: 50px;
+    padding: 1px 15px;
+}
+
 .footer-style {
     margin-top: 15px;
-    color: white;
+    color: rgb(250, 175, 24);
     line-height: 25px;
     background-color: #080808;
     padding: 5px;
@@ -76,7 +69,7 @@ hr {
 }
 
 .row {
-    min-height: 83.2vh;
+    min-height: 88.2vh;
     margin-top: 50px;
 }
 .thumbnail{
