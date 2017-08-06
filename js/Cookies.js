@@ -25,6 +25,7 @@
         } else {
             e.returnValue = false;
         }
+        monster.set('cookieinfo', 'true', 365);
 
         container.setAttribute('style', 'opacity: 1');
 
@@ -47,7 +48,6 @@
     container.appendChild(link);
     document.body.appendChild(container);
 
-    monster.set('cookieinfo', 'true', 365);
 
     return true;
 })();
