@@ -5654,6 +5654,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > li > a:focus {
     color: rgb(250, 175, 24);
     background-color: transparent;
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -5661,12 +5662,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:focus {
     color: rgb(250, 175, 24);
     background-color: #080808;
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
-    color: #444;
+    color: rgb(67, 42, 15);
     background-color: transparent;
 }
 
