@@ -1,27 +1,36 @@
 * {
     box-sizing: border-box;
 }
+
 .prod_container {
-    padding: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: yellow;
-    /*float: left;*/
-    /*position: relative;*/
+    float: left;
+    position: relative;
 }
 
 .prod_item {
-    margin: 20px;
-    width: 40%;
-    /*left: 5%;*/
-    /*right:5%;*/
+    width: 50%;
     float: left;
-    background-color: white;
-    padding: 5px;
-    text-align: left;
-    color: black;
-    /*position: absolute;*/
+    padding: 30px;
+    color: white;
 }
+
+
+.prod_ico {
+    /*display: block;*/
+}
+
+.prod_title {
+    margin-bottom: 20px;
+}
+
+
+.prod_list {
+   padding-left: 22px;
+   text-indent: -12px;
+   line-height: 22px;
+    /*display: inline;*/
+}
+
 
 .prod_clear {
     clear: both;
