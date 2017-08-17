@@ -10,7 +10,8 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #323334;
+    background-color: #222222;
+    border-radius: 4px;
     padding: 20px;
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -19,14 +20,14 @@
 #cookieinfo h6 {
     font-size: 16px;
     font-weight: bold;
-    color: #cdd7da;
+    color: rgb(250, 175, 24);
     text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
     margin-bottom: 7px;
 }
 
 #cookieinfo p {
     font-size: 12px;
-    color: #afb4bc;
+    color: rgb(250, 175, 24);
     line-height: 1.5em;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
 }
@@ -44,10 +45,10 @@
     color: #ffffff;
     text-align: center;
     text-decoration: none;
-    background-color: darkred;
+    background-color: rgb(139, 97, 14);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 #cookieinfo a:hover {
-    background-color: red;
+    background-color: rgb(250, 175, 24);
 }

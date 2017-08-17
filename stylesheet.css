@@ -6,40 +6,21 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url("img/colorfulbc.jpg");
 }
 
-.index-page {
-    background-image: url("img/event.jpeg");
-}
-
-.contctus-page {
-    background-image: url("img/contact.jpg");
-}
-
-.aboutus-page {
-    background-image: url("img/aboutus.jpg");
+.body {
+    min-height: 550px;
 }
 
 .col-sm-8 {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.65);
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: rgb(250, 175, 24);
     border-radius: 4px;
     padding: 15px 0;
     margin-top: 15px;
-}
-
-.fa-rocket {
-    color: white;
-    float: left;
-    font-size: 15px;
-    margin: 0.25em;
-}
-
-.navbar-brand {
-    font-size: 23px;
-    font-weight: 700;
 }
 
 hr {
@@ -47,9 +28,14 @@ hr {
     background-color: #080808;
 }
 
+.navbar-logo {
+    height: 50px;
+    padding: 1px 15px;
+}
+
 .footer-style {
-    margin-top: 15px;
-    color: white;
+    margin: 15px 0;
+    color: rgb(250, 175, 24);
     line-height: 25px;
     background-color: #080808;
     padding: 5px;
@@ -76,7 +62,7 @@ hr {
 }
 
 .row {
-    min-height: 83.2vh;
+    min-height: 88.1vh;
     margin-top: 50px;
 }
 .thumbnail{
@@ -89,6 +75,6 @@ hr {
 .buttonThumbnail{
     position: absolute;
     margin-right: 55%;
-    bottom: 10%;
+    bottom: 6%;
     transform: translateX(-50%);
 }
