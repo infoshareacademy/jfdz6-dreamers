@@ -3,14 +3,15 @@
 }
 
 body {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("img/colorfulbc.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("img/colorfulbc.jpg");
-}
+    background-size: cover;}
+
 
 .body {
-    min-height: 550px;
+    min-height: 88.1vh;
 }
 
 .col-sm-8 {
@@ -62,19 +63,76 @@ hr {
 }
 
 .row {
-    min-height: 88.1vh;
     margin-top: 50px;
 }
 .thumbnail{
-    height: 450px;
+    height: 300px;
+    position: relative;
 }
 .textThumbnail{
+    position: absolute;
     font-weight:normal;
-    color: #000000;
+    /* color: #000000;*/
+    color: rgb(250, 175, 24);
+    background-color: rgba(0,0,0,0.65);
+
+    text-shadow: 1px 2px #000;
+
+
 }
+.eventMain{
+    font-size: 18px;
+    visibility: visible;
+    transition:visibility 0s linear 0.2s,opacity 0.1s linear;
+
+
+}
+.eventName{
+    position: relative;
+
+}
+.eventPlace{
+    position: relative;
+
+
+}
+.eventDetails{
+    visibility: hidden;
+    width: 150px;
+    position: absolute;
+    font-size: 17px;
+    top: 20%;
+    left: 20%;
+    background-color: rgba(0,0,0,0.65);
+
+    border: 15px;
+    transition:visibility 0s linear 0.2s,opacity 0.1s linear;
+
+}
+
+.eventDetailsText{
+    position: relative;
+    top:20px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+
 .buttonThumbnail{
     position: absolute;
+    width: auto;
     margin-right: 55%;
-    bottom: 6%;
+    bottom: 7%;
     transform: translateX(-50%);
+}
+.thumbImages{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+.thumbnail:hover .eventMain{
+    visibility: hidden;
+}
+.thumbnail:hover .eventDetails, .eventName{
+    visibility: visible;
 }

@@ -44,6 +44,71 @@
         <div class="col-sm-8 text-left">
             <h1>Trójmiejski Kalendarz Imprez</h1>
             <h2>Najlepsza wyszukiwarka - najlepsze Imprezy</h2>
+            <hr><hr>
+            <div class="row content">
+                <div class="form-group">
+
+                  <div class="col-sm-2">
+                        <label for="datepicker1">Od:</label>
+                        <input type="date" class="form-control" onclick="filterEvents()" id="datepicker1">
+                    </div>
+                <div class="col-sm-2">
+                    <label for="datepicker2">Do:</label>
+                    <input type="date" class="form-control" onclick="filterEvents()" id="datepicker2">
+                </div>
+                    <div class="col-sm-2">Bilety:
+                        <div class="checkbox">
+                            <label><input type="checkbox1" onclick="filterEvents()" value="">Darmowe</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox2" onclick="filterEvents()" value="">Płatne</label>
+                        </div>
+                        <div class="checkbox disabled">
+                            <label><input type="checkbox3" onclick="filterEvents()" value="">Nie określone</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="option-list">
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="19" checked>teatr
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="1" checked>kino
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="51" checked>sztuka
+                                    </label>
+
+                                    <label>
+                                            <input type="checkbox" name="category[]" value="35" checked>muzyka
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="83" checked>nauka
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="61" checked>literatura
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="69" checked>rozrywka
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="77" checked>rekreacja
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="96" checked>inne
+                                    </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr><hr>
             <div id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusantium, alias delectus dignissimos
                 distinctio dolor doloremque ea, facere, fugit harum incidunt laudantium odio quam qui reprehenderit
                 sequi. Nemo, totam.
