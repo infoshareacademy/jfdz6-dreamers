@@ -19,7 +19,6 @@ body {
     font-weight: bold;
     color: rgb(250, 175, 24);
     border-radius: 4px;
-    padding: 15px 0;
     margin-top: 15px;
 }
 
@@ -62,9 +61,9 @@ hr {
 }
 
 .row {
-    min-height: 88.1vh;
     margin-top: 50px;
 }
+
 .thumbnail{
     height: 450px;
 }
