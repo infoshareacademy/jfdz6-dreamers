@@ -51,12 +51,12 @@
             <!--Formularz kontaktowy-->
             <form action="contactus.html?mailsend">
                 <div>
-                    <p class="form-text">Wyślij zapytanie.</p>
-                    <div><input type="text" name="firstname" id="firstname" placeholder="Imię"></div>
-                    <div><input type="text" name="email" id="email" placeholder="Adres e-mail"></div>
-                    <div><textarea name="message" placeholder="Treść wiadomości" id="message"></textarea></div>
-                    <div>
-                        <button type="submit" value="send">Wyślij</button>
+                    <p cn type="submit" lass="form-text">Wyślij zapytanie.</p>
+                            <div><input type="text" name="firstname" id="firstname" placeholder="Imię" required></div>
+                            <div><input type="email" name="email" id="email" placeholder="Adres e-mail" required></div>
+                            <div><textarea name="message" placeholder="Treść wiadomości" id="message"required></textarea></div>
+                            <div>
+                                <button value="send">Wyślij</button>
                     </div>
                 </div>
             </form>
