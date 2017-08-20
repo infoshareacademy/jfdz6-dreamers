@@ -5,43 +5,32 @@ function showResult() {
 
 
     var div = "";
-
-
     var today = new Date().toJSON().slice(0,10);
-
-    var urltest = 'http://planer.info.pl/api/rest/events.json?&​start_date='+today+'&limit=8';
-
-
+    var urltest = 'http://planer.info.pl/api/rest/events.json?start_date='+today+'&limit=9';
     var proxy = 'proxy.php';
-    var url = proxy + '?url=' + urltest;
-
+    var url = proxy + '?url=' + encodeURIComponent(urltest);
 
     //GET JSON
 
     var jqxhr = $.get(url, function (data) {
-
-
         var response = JSON.parse(data);
         var i;
         //LOOP OVER DATA
         for (i = 0; i < response.length; i++) {
+            //check if link exist
             if(response[i]['urls']['www']!==undefined){
                 div += '<a href="'+response[i]['urls']['www']+'" title="Otworz wydarzenie">';
             }
-            div += '<div class="col-sm-5 col-md-4 col-lg-3">';
+            div += '<div class="col-md-4 col-sm-6 col-xs-12">';
+            //check if attachment exists
             if(response[i]['attachments']['0']!==undefined){
 
                 var link="http://planer.info.pl/image/event/"+response[i]['id']+"/"+response[i]['attachments']['fileName'];
-                div += '<div class="thumbnail" style="background-image: url('+link+'); height: 250px; width: 250px;">';
+                div += '<div class="thumbnail img-responsive" style="background-image: url('+link+'); height: 250px;">';
             }
             else{
-                div += '<div class="thumbnail" style="background-image: url(\'http://lorempixel.com/300/300/nightlife\'); height: 250px; width: 250px;">';
+                div += '<div class="thumbnail img-responsive" style="background-image: url(\'http://lorempixel.com/300/300/nightlife\'); height: 250px;background-size:cover";>';
             }
-                http://planer.info.pl/image/event/34529/events/eventthumb_598ac50041fcb.png
-
-
-
-
 
 
                 div += '<div class="eventMain">';
@@ -59,7 +48,8 @@ function showResult() {
             var endDate = response[i]['endDate'].substring(0, response[i]['endDate'].length - 5);
             endDate = endDate.replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ');
             div += '<p class="textThumbnail eventDetailsText details">Start: ' + startDate + '</p>';
-            div += '<br><p class="textThumbnail eventDetailsText details">Koniec: ' + endDate + '</p>';
+            div += '<p class="textThumbnail eventDetailsText details"></br>  </p>';
+            div += '<p class="textThumbnail eventDetailsText details">Koniec: ' + endDate + '</p>';
             // div += '<button  type="button" class="btn btn-default buttonThumbnail" onclick=" window.open(\'' + response[i]['urls']['www'] + '\',\'_blank\')">Strona wydarzenia</button>';
             div += '</div>';
             div += '</div>';
@@ -71,7 +61,6 @@ function showResult() {
             }
             div += '</div>';
             div += '</div>';
-
 
         }
 
@@ -87,6 +76,23 @@ showResult();
 
 function filterEvents() {
 
+    var date1 = $( "#datepicker1" ).val();
+    console.log(date1);
+    var date2 = $( "#datepicker2" ).val();
+    console.log(date2);
+
+// Get the value from a checked checkbox
+    var checkbox1 = $( "input[type=checkbox][name=checkbox1]:checked" ).val();
+    console.log('checkbox1',checkbox1);
+    var checkbox2 = $( "input[type=checkbox][name=checkbox2]:checked" ).val();
+    console.log('checkbox2',checkbox2);
+    var checkbox3 = $( "input[type=checkbox][name=checkbox3]:checked" ).val();
+    console.log('checkbox3',checkbox3);
+
+    var category = $( "input[type=checkbox][name=category]:checked" ).val();
+    console.log('category',category);
+
+// Get the value from a set of radio buttons
 
 
 }

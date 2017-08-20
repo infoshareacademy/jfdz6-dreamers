@@ -20,7 +20,6 @@ body {
     font-weight: bold;
     color: rgb(250, 175, 24);
     border-radius: 4px;
-    padding: 15px 0;
     margin-top: 15px;
 }
 
@@ -62,11 +61,10 @@ hr {
     width: 100%;
 }
 
-.row {
+.margintop {
     margin-top: 50px;
 }
 .thumbnail{
-    height: 300px;
     position: relative;
 }
 .textThumbnail{
@@ -74,7 +72,7 @@ hr {
     font-weight:normal;
     /* color: #000000;*/
     color: rgb(250, 175, 24);
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(63, 53, 61, 0.65);
 
     text-shadow: 1px 2px #000;
 
@@ -102,10 +100,8 @@ hr {
     position: absolute;
     font-size: 17px;
     top: 20%;
-    left: 20%;
-    background-color: rgba(0,0,0,0.65);
+    align-self: center;
 
-    border: 15px;
     transition:visibility 0s linear 0.2s,opacity 0.1s linear;
 
 }
@@ -135,4 +131,49 @@ hr {
 }
 .thumbnail:hover .eventDetails, .eventName{
     visibility: visible;
+}
+.mid{
+    margin:0px 50px 0px 50px;
+}
+
+.midNav{
+    margin-left: 15.5%;
+    margin-right: 14.5%;
+}
+
+@media (max-width: 950px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
 }
