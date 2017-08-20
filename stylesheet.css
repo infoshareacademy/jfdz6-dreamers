@@ -3,14 +3,15 @@
 }
 
 body {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("img/colorfulbc.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("img/colorfulbc.jpg");
-}
+    background-size: cover;}
+
 
 .body {
-    min-height: 550px;
+    min-height: 88.1vh;
 }
 
 .col-sm-8 {
@@ -60,20 +61,121 @@ hr {
     width: 100%;
 }
 
-.row {
+
+.margintop {
     margin-top: 50px;
 }
 
 .thumbnail{
-    height: 450px;
+    position: relative;
 }
 .textThumbnail{
+    position: absolute;
     font-weight:normal;
-    color: #000000;
+    /* color: #000000;*/
+    color: rgb(250, 175, 24);
+    background-color: rgba(63, 53, 61, 0.65);
+
+    text-shadow: 1px 2px #000;
+
+
 }
+.eventMain{
+    font-size: 18px;
+    visibility: visible;
+    transition:visibility 0s linear 0.2s,opacity 0.1s linear;
+
+
+}
+.eventName{
+    position: relative;
+
+}
+.eventPlace{
+    position: relative;
+
+
+}
+.eventDetails{
+    visibility: hidden;
+    width: 150px;
+    position: absolute;
+    font-size: 17px;
+    top: 20%;
+    align-self: center;
+
+    transition:visibility 0s linear 0.2s,opacity 0.1s linear;
+
+}
+
+.eventDetailsText{
+    position: relative;
+    top:20px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+
 .buttonThumbnail{
     position: absolute;
+    width: auto;
     margin-right: 55%;
-    bottom: 6%;
+    bottom: 7%;
     transform: translateX(-50%);
+}
+.thumbImages{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+.thumbnail:hover .eventMain{
+    visibility: hidden;
+}
+.thumbnail:hover .eventDetails, .eventName{
+    visibility: visible;
+}
+.mid{
+    margin:0px 50px 0px 50px;
+}
+
+.midNav{
+    margin-left: 15.5%;
+    margin-right: 14.5%;
+}
+
+@media (max-width: 950px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
 }
