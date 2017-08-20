@@ -179,3 +179,12 @@ hr {
         display:block !important;
     }
 }
+
+.social {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.social>div>a, .social>div>a:hover {
+    text-decoration: none;
+}
