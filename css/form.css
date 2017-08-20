@@ -9,6 +9,12 @@ input, textarea{
     margin-bottom: 10px;
 }
 
+@media (max-width: 950px) {
+    input, textarea {
+        max-width: 350px;
+    }
+}
+
 textarea {
     height: 200px;
 }
