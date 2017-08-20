@@ -3,32 +3,30 @@
 }
 
 .prod_container {
-    float: left;
+    /*float: left;*/
     position: relative;
 }
 
 .prod_item {
-    width: 50%;
-    float: left;
-    padding: 30px;
+    /*width: 50%;*/
+    /*float: left;*/
     color: white;
-}
-
-
-.prod_ico {
-    /*display: block;*/
 }
 
 .prod_title {
     margin-bottom: 20px;
 }
 
-
 .prod_list {
+   font-size: 14px;
    padding-left: 22px;
    text-indent: -12px;
    line-height: 22px;
     /*display: inline;*/
+}
+
+.prod_text {
+    color: #D2C39A;
 }
 
 
