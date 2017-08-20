@@ -2,8 +2,6 @@
  * Created by damianwisniewski on 23.07.17.
  */
 function showResult() {
-
-
     var div = "";
     var today = new Date().toJSON().slice(0,10);
     var urltest = 'http://planer.info.pl/api/rest/events.json?start_date='+today+'&limit=9';
@@ -11,7 +9,6 @@ function showResult() {
     var url = proxy + '?url=' + encodeURIComponent(urltest);
 
     //GET JSON
-
     var jqxhr = $.get(url, function (data) {
         var response = JSON.parse(data);
         var i;
@@ -65,34 +62,68 @@ function showResult() {
         }
 
 
+
+
         document.getElementById("demo").innerHTML = div;
 
     });
 
 }
 
+function getDateNode(event) {
+    return event['startDate']
+        .substring(0, event['startDate'].length - 5)
+        .replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ';
+}
+
 
 showResult();
+var checkbox1 = $( "input[type=checkbox][name=checkbox1]" );
+var checkbox2 = $( "input[type=checkbox][name=checkbox2]" );
+var checkbox3 = $( "input[type=checkbox][name=checkbox3]" );
+
+checkbox1
+    .add(checkbox2)
+    .add(checkbox3)
+    .on('click', filterEvents);
 
 function filterEvents() {
-
     var date1 = $( "#datepicker1" ).val();
     console.log(date1);
     var date2 = $( "#datepicker2" ).val();
     console.log(date2);
 
+
+
+    console.log(checkbox1.prop('checked') , ' this val 1');
+    console.log(checkbox2.prop('checked') , ' this val 2');
+    console.log(checkbox3.prop('checked') , ' this val 3');
+
+
 // Get the value from a checked checkbox
-    var checkbox1 = $( "input[type=checkbox][name=checkbox1]:checked" ).val();
-    console.log('checkbox1',checkbox1);
-    var checkbox2 = $( "input[type=checkbox][name=checkbox2]:checked" ).val();
-    console.log('checkbox2',checkbox2);
-    var checkbox3 = $( "input[type=checkbox][name=checkbox3]:checked" ).val();
-    console.log('checkbox3',checkbox3);
-
-    var category = $( "input[type=checkbox][name=category]:checked" ).val();
-    console.log('category',category);
-
-// Get the value from a set of radio buttons
+    var categories= getFilterValues();
+//    x.join(',');
+    console.log('categories',categories);
 
 
+
+}
+
+var ticketTypes = {
+    UNKNOWN: 'unknown',
+    FREE: 'free'
+};
+
+function isUnknown(value) {
+    return value === ticketTypes.UNKNOWN;
+}
+
+collection = collection.filter(isUnknown);
+
+function getFilterValues() {
+    var $filters = $(".option-list").find($("input[type=checkbox]"));
+
+    return $filters.map(function(idx, filter) {
+        return +filter.value;
+    });
 }
