@@ -55,6 +55,10 @@ hr {
     margin-bottom: 30px;
 }
 
+.carousel-indicators {
+    bottom: 45px;
+}
+
 .navbar {
     z-index: 1;
     position: fixed;
