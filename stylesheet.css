@@ -181,6 +181,9 @@ hr {
     .body {
         min-height: 0;
     }
+    .prod_item > .prod_text.lead{
+        font-size: 21px;
+    }
 }
 
 .social {
