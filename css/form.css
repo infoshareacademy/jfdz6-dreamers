@@ -6,8 +6,15 @@ input, textarea, button {
     margin-bottom: 10px;
 }
 
-button {
+.buttonEnabled {
+    visibility: visible;
     font-size: 21px;
     background-color: black;
     border-radius: 5px;
+}
+.buttonDisabled{
+    visibility:hidden;
+}
+.verification{
+    display: none;
 }

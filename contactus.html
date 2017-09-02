@@ -14,7 +14,29 @@
     <script src="js/bootstrap.min.js"></script>
     <!--Okienko informujące o wysłaniu w dalszej czesci wymienic alert-->
     <script>
+        var random1;
+        var random2;
         if( document.location.href.match(/firstname/) ){ alert('Formularz został wysłany. Dziękujemy'); }
+        $(function() {
+            var min = 10;
+            var max = 20;
+            random1 = Math.floor(Math.random() * (max - min + 1)) + min;
+            random2 = Math.floor(Math.random() * (max - min + 8)) + min;
+
+            $("#calc").text(random1+' + '+random2+' =');
+        });
+        function check() {
+            var inputValue = $("#a3").val();
+            if (parseInt(inputValue) === (random1 + random2)) {
+                $("#submitButton").removeClass("buttonDisabled").addClass("buttonEnabled");
+                $("#verificate").addClass("verification");
+
+            }
+            else
+            {
+                alert('Idz do szkoly');
+            }
+        }
     </script>
 
 </head>
@@ -58,7 +80,8 @@
                             <div><input type="text" name="firstname" class="form-control" id="firstname" placeholder="Imię" required></div>
                             <div><input type="email" name="email" class="form-control" id="email" placeholder="Adres e-mail" required></div>
                             <div><textarea name="message" placeholder="Treść wiadomości" class="form-control" rows="8" id="message"required></textarea></div>
-                            <div><button value="send">Wyślij</button></div>
+                            <div id="verificate"> <p id="calc"></p><input id="a3" type="number" /><a onclick="check()" class="btn btn-info">Check</a></div>
+                            <div><button id="submitButton" value="send" class="buttonDisabled" >Wyślij</button></div>
 
                     </div>
             </form>
