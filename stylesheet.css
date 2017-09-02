@@ -9,18 +9,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;}
 
-
-.body {
-    min-height: 85.5vh;
-}
-
-.col-sm-8 {
+.bg-grey  {
     background-color: rgba(0,0,0,0.65);
     text-align: center;
     font-weight: bold;
     color: rgb(250, 175, 24);
     border-radius: 4px;
-    margin-top: 15px;
+    margin-top: 65px;
+    padding: 1em;
+}
+
+section.container {
+    min-height: 90.7vh;
+}
+
+@media (max-width: 767px) {
+    section.container {
+        min-height: 79.3vh;
+    }
 }
 
 hr {
@@ -30,7 +36,7 @@ hr {
 
 .navbar-logo {
     height: 50px;
-    /*padding: 1px 15px;*/
+    padding-left: 15px;
 }
 
 .footer-style {
@@ -38,8 +44,9 @@ hr {
     line-height: 25px;
     background-color: #080808;
     padding: 5px;
-    width: 100%;
-    margin: 15px 0;
+    margin: 15px 0 0 0;
+    position: static;
+    bottom: 0;
 }
 
 #myCarousel {
@@ -59,11 +66,6 @@ hr {
     bottom: 45px;
 }
 
-.navbar {
-    z-index: 1;
-    position: fixed;
-    width: 100%;
-}
 
 
 .margintop {
@@ -140,54 +142,6 @@ hr {
 }
 .mid{
     margin:0px 50px;
-}
-
-.midNav{
-    margin-left: 15.5%;
-    margin-right: 14.5%;
-}
-
-@media (max-width: 950px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
-    .body {
-        min-height: 0;
-    }
-    .prod_item > .prod_text.lead{
-        font-size: 21px;
-    }
 }
 
 .social {
