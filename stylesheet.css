@@ -223,3 +223,32 @@ hr {
     text-align: center;
     line-height: 30px;
 }
+
+/*VVV carusel css VVV*/
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: rgb(250, 175, 24);
+}
+
+.carousel-indicators li.active {
+    background-color: rgb(250, 175, 24);
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+
+.img-position {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
