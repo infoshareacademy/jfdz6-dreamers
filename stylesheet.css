@@ -252,6 +252,12 @@ hr {
     color: rgb(157, 111, 19);
 }
 
+#myCarousel .item > h4 > a:hover {
+    color: rgb(250, 175, 24);
+    text-decoration: none;
+}
+
+
 .flex {
     display: flex;
     flex-wrap: wrap;
