@@ -232,7 +232,6 @@ hr {
     line-height: 30px;
 }
 
-/*VVV carusel css VVV*/
 .carousel-control.right, .carousel-control.left {
     background-image: none;
     color: rgb(250, 175, 24);
@@ -247,6 +246,10 @@ hr {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
+}
+
+#myCarousel .item > h4 > a {
+    color: rgb(157, 111, 19);
 }
 
 .flex {
