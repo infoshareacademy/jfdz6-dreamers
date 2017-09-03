@@ -266,6 +266,10 @@ hr {
         flex: 100%;
 }
 
+    .flex-item {
+        min-width: 100px;
+    }
+
     .flex-text>a>p {
         visibility: hidden;
     }
