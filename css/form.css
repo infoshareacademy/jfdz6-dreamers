@@ -18,3 +18,17 @@ input, textarea, button {
 .verification{
     display: none;
 }
+
+#success,
+#fail {
+    position: absolute;
+    visibility: hidden;
+}
+
+#success:after {
+    visibility: visible;
+}
+
+#fail:after {
+    visibility: visible;
+}
