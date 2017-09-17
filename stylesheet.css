@@ -239,9 +239,8 @@ hr {
 
 .img-position {
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
+    margin: 0 auto;
+    padding-bottom: 15px;
 }
 
 #myCarousel .item > h4 > a {
@@ -252,7 +251,6 @@ hr {
     color: rgb(250, 175, 24);
     text-decoration: none;
 }
-
 
 .flex {
     display: flex;
@@ -268,8 +266,7 @@ hr {
 
 .flex-item {
     flex: 1;
-    align-content: space-around;
-    justify-content: center;
+    padding: 10px 15px;
 }
 
 @media (max-width: 1199px) {
@@ -285,4 +282,25 @@ hr {
     font-size: 6em;
     background-color: rgba(0,0,0,0.65);
     border-radius: 5px;
+}
+
+@media (min-width: 767px) {
+    .item {
+        position: absolute;
+    }
+
+    .img-text {
+        background-color: rgba(0,0,0,0.9);
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1199px) {
+    .img-text {
+        bottom: 3em;
+        left: 6em;
+    }
 }
