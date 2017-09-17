@@ -20,7 +20,7 @@ body {
 }
 
 section.container {
-    min-height: 89.1vh;
+    min-height: 87.1vh;
 }
 
 #myCarousel {
@@ -41,19 +41,19 @@ section.container {
 
 @media (max-width: 1199px) {
     section.container {
-        min-height: 86vh;
+        min-height: 81.9vh;
     }
 }
 
 @media (max-width: 767px) {
     section.container {
-        min-height: 86vh;
+        min-height: 81.9vh;
     }
 }
 
 @media (max-width: 482px) {
     section.container {
-        min-height: 78.6vh;
+        min-height: 74.1vh;
     }
 
     .carouselSize {
