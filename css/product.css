@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.prod_container {
+.product-container {
     /*float: left;*/
     position: relative;
 }
@@ -13,11 +13,11 @@
     color: white;
 }
 
-.prod_title {
+.product-title {
     margin-bottom: 20px;
 }
 
-.prod_list {
+.product-list {
    font-size: 14px;
    padding-left: 22px;
    text-indent: -12px;
@@ -25,12 +25,12 @@
     /*display: inline;*/
 }
 
-.prod_text {
+.product-text {
     color: rgb(250, 175, 24);
 }
 
 
-.prod_clear {
+.product-clear {
     clear: both;
     display: block;
     /*float: left;*/
