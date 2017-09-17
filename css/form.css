@@ -25,10 +25,7 @@ input, textarea, button {
     visibility: hidden;
 }
 
-#success:after {
-    visibility: visible;
-}
-
+#success:after,
 #fail:after {
     visibility: visible;
 }
