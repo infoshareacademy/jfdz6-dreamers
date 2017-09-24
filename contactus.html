@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/form.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!--Okienko informujące o wysłaniu w dalszej czesci wymienic alert-->
     <script>
         var random1;
         var random2;
@@ -26,20 +25,24 @@
             random2 = Math.floor(Math.random() * (max - min + 8)) + min;
 
             $("#calc").text(random1+' + '+random2+' =');
-        });
-        function check() {
-            var inputValue = $("#a3").val();
-            if (parseInt(inputValue) === (random1 + random2)) {
-                $("#submitButton").removeClass("buttonDisabled").addClass("buttonEnabled");
-                $("#verificate").addClass("verification");
 
-            }
-            else
-            {
-//                alert('Idz do szkoly');
-                $("#fail").show();
-            }
-        }
+            $('form').on('submit', function(e){
+                e.preventDefault();
+                var inputValue = $("#a3").val();
+                if (parseInt(inputValue) === (random1 + random2)) {
+                    $("#success").fadeIn( "slow" );
+                    setTimeout(function() {
+                        $("#success").fadeOut( "slow" );
+                    }, 4000);
+                } else {
+                    $("#fail").fadeIn( "slow" );
+                    setTimeout(function() {
+                        $("#fail").fadeOut( "slow" );
+                    }, 4000);
+                }
+            });
+
+        });
     </script>
 
 </head>
@@ -73,27 +76,34 @@
     <div class="content-background">
             <h2>Trójmiejski Kalendarz Imprez</h2>
             <h3>Najlepsza wyszukiwarka - najlepsze Imprezy</h3>
-            <!--Formularz kontaktowy-->
+            <!--Form content-->
         <div class="container-fluid">
             <form action="contactus.html?mailsend">
                     <hr>
                     <h4>Wyślij zapytanie.</h4>
                     <hr>
-                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                            <div><input type="text" name="firstname" class="form-control" id="firstname" placeholder="Imię" required></div>
-                            <div><input type="email" name="email" class="form-control" id="email" placeholder="Adres e-mail" required></div>
-                            <div><textarea name="message" placeholder="Treść wiadomości" class="form-control" rows="8" id="message" required></textarea></div>
-                            <div id="verificate"> <p id="calc"></p><input id="a3" type="number" /><a onclick="check()" class="btn btn-info">Check</a></div>
-                            <div><button id="submitButton" value="send" class="buttonDisabled" >Wyślij</button></div>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div><input type="text" name="firstname" class="form-control" id="firstname" placeholder="Imię"
+                                required></div>
+                    <div><input type="email" name="email" class="form-control" id="email" placeholder="Adres e-mail"
+                                required></div>
+                    <div><textarea name="message" placeholder="Treść wiadomości" class="form-control" rows="8"
+                                   id="message" required></textarea></div>
+                    <div id="verificate"><p id="calc"></p><input id="a3" type="number"/>
+                        <div>
+                            <button id="submitButton" value="send" class="buttonEnabled">Wyślij</button>
+                        </div>
 
                     </div>
-                <!--Wyświetla się okienko gdy zostanie wysłane-->
-                    <div class="alert alert-success" id="success">
-                        <strong>Formularz został wysłany. Dziękujemy!</strong> 1txt <a href="#" class="alert-link">2 </a>.
+                <!--Show ok-window-->
+                    <div class="dreamersbutton" id="success">
+                        <p>Dziękujemy.</p>
+                        <p>Formularz został wysłany.</p>
                     </div>
-                <!--Wyświetla się okienko gdy jest błąd sumy-->
-                    <div class="alert alert-danger" id="fail">
-                    <strong>Ponownie wpisz sumę kontrolną</strong> 1 <a href="#" class="alert-link">2 </a>.
+                <!--Show fail-window-->
+                    <div class="dreamersbutton" id="fail">
+                    <p class="dreamersfail">Błąd!</p>
+                        <p>Wpisz poprawną sumę.</p>
                     </div>
             </form>
         </div>
