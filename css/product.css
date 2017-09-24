@@ -8,7 +8,7 @@
 
 .prod_item {
     color: rgb(250, 175, 24);
-    margin-bottom: 6em;
+    margin: 1em 0 2em 0;
 }
 
 .neon {
@@ -22,7 +22,9 @@
 }
 
 .neon > h4 {
-    font-size: 1.6em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 2em;
 }
 
 .neon:hover {
@@ -49,6 +51,7 @@
 
 .product-text {
     color: rgb(250, 175, 24);
+    margin: 0 1em 0 1em;
 }
 
 .product-clear {
