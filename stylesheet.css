@@ -39,29 +39,6 @@ section.container {
     bottom: 45px;
 }
 
-@media (max-width: 1199px) {
-    section.container {
-        min-height: 86vh;
-    }
-}
-
-@media (max-width: 767px) {
-    section.container {
-        min-height: 86vh;
-    }
-}
-
-@media (max-width: 482px) {
-    section.container {
-        min-height: 78.6vh;
-    }
-
-    .carouselSize {
-        width: auto;
-        margin-bottom: 30px;
-    }
-}
-
 hr {
     opacity: 0.9;
     background-color: #080808;
@@ -137,7 +114,6 @@ hr {
     top:20px;
     background-color: rgba(0,0,0,0.75);
 }
-
 
 .buttonThumbnail{
     position: absolute;
@@ -274,6 +250,23 @@ hr {
     align-content: space-around;
 }
 
+@media (max-width: 482px) {
+    section.container {
+        min-height: 78.6vh;
+    }
+
+    .carouselSize {
+        width: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    section.container {
+        min-height: 86vh;
+    }
+}
+
 @media (max-width: 1199px) {
     .flex-text {
         flex: 100%;
@@ -286,4 +279,12 @@ hr {
     .flex-text>a>p {
         visibility: hidden;
     }
+
+    section.container {
+        min-height: 86vh;
+    }
 }
+
+
+
+
