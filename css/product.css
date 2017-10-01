@@ -4,18 +4,21 @@
 
 @keyframes titleIn {
     0% {
-        transform: scale(0.9);
-        opacity: 0.5;
+        transform: translateY(20px););
+        opacity: 0;
     }
     100% {
-        transform: scale(1.0);
+        transform: translateY(40px));
         opacity: 1;
     }
 }
 
 .product-title {
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
     animation-name: titleIn;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 }
 
 .product-container {
@@ -37,7 +40,7 @@
 }
 
 .neon > i {
-    font-size: 14em;
+    font-size: 12em;
 }
 
 .neon > h4 {
