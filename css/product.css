@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 @keyframes titleIn {
     0% {
         transform: scale(0.9);
@@ -28,12 +27,6 @@
     margin: 1em 0 2em 0;
 }
 
-@keyframes neonIn {
-    0% {opacity: 0;}
-    30% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
 .neon {
     animation-name: neonIn;
     animation-duration: 1.5s;
@@ -53,7 +46,8 @@
     font-size: 2em;
 }
 
-.neon:hover {
+.neon:hover,
+.neon-blick {
     transition-duration: 80ms;
     transform: scale(1.02);
     color: white;
