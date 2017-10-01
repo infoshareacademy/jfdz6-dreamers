@@ -20,7 +20,7 @@ body {
 }
 
 section.container {
-    min-height: 89.1vh;
+    min-height: 87.1vh;
 }
 
 #myCarousel {
@@ -41,19 +41,19 @@ section.container {
 
 @media (max-width: 1199px) {
     section.container {
-        min-height: 86vh;
+        min-height: 81.9vh;
     }
 }
 
 @media (max-width: 767px) {
     section.container {
-        min-height: 86vh;
+        min-height: 81.9vh;
     }
 }
 
 @media (max-width: 482px) {
     section.container {
-        min-height: 78.6vh;
+        min-height: 74.1vh;
     }
 
     .carouselSize {
@@ -107,25 +107,21 @@ hr {
 
 
 }
-.eventName{
+.eventName, .eventPlace{
     position: relative;
 
 }
-.eventPlace{
-    position: relative;
 
-
-}
 .eventDetails{
     visibility: hidden;
     width: 150px;
     position: absolute;
     font-size: 17px;
     top: 20%;
+    left: 50%;
     align-self: center;
-
     transition:visibility 0s linear 0.2s,opacity 0.1s linear;
-
+    transform: translatex(-50%);
 }
 
 .eventDetailsText{
@@ -243,9 +239,8 @@ hr {
 
 .img-position {
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
+    margin: 0 auto;
+    padding-bottom: 15px;
 }
 
 #myCarousel .item > h4 > a {
@@ -257,17 +252,21 @@ hr {
     text-decoration: none;
 }
 
-
 .flex {
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    padding-left: 15px;
 }
+
+
 
 .flex-item {
     flex: 1;
-    align-content: space-around;
+    padding: 10px 15px;
 }
 
 @media (max-width: 1199px) {
@@ -276,10 +275,32 @@ hr {
 }
 
     .flex-item {
-        min-width: 100px;
+        min-width: 90px;
+    }
+}
+.buttonSearch{
+    font-size: 6em;
+    background-color: rgba(0,0,0,0.65);
+    border-radius: 5px;
+}
+
+@media (min-width: 767px) {
+    .item {
+        position: absolute;
     }
 
-    .flex-text>a>p {
-        visibility: hidden;
+    .img-text {
+        background-color: rgba(0,0,0,0.9);
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1199px) {
+    .img-text {
+        bottom: 3em;
+        left: 6em;
     }
 }
