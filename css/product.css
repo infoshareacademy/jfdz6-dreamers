@@ -2,6 +2,23 @@
     box-sizing: border-box;
 }
 
+
+@keyframes titleIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
+
+.product-title {
+    animation-name: titleIn;
+    animation-duration: 0.5s;
+}
+
 .product-container {
     position: relative;
 }
@@ -11,8 +28,17 @@
     margin: 1em 0 2em 0;
 }
 
+@keyframes neonIn {
+    0% {opacity: 0;}
+    30% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .neon {
-    transition-delay: 30ms;
+    animation-name: neonIn;
+    animation-duration: 1.5s;
+    transition-delay: 50ms;
+    transition: 450ms linear;
     cursor: pointer;
     display: inline-block;
 }
