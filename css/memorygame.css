@@ -1,0 +1,23 @@
+.choose {
+    display: flex;
+    float: left;
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+}
+
+#first {
+    background-color: red;
+}
+
+#second {
+    background-color: green;
+}
+
+#third {
+    background-color: blue;
+}
+
+#fourth {
+    background-color: yellow;
+}
