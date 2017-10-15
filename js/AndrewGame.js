@@ -37,21 +37,25 @@ $('td', $table).addClass('cell');
     $app.append($table);
 
 
-    function partyPlaces(x) {
-        var $xCell = $('table').find('td').first()+1;
-        $xCell.addClass('placeParty');
-        // setInterval(function () {
-        //     $firstCell.toggleClass('green red')
-        // }, 1000);
-        //
-        // for (var j = 0; j < 3; j++) {
-        //     $tr = $('<tr>');
-        //     for (var i = 0; i < 3; i++) {
-        //         $td = $('<td>');
-        //         $tr.append($td);
-        //     }
-        //     $table.append($tr);
-        // }
-    }
-    partyPlaces(1)
+
+    partyPlaces(1,1)
 });
+
+function partyPlaces(x, y) {
+    // var $xCell = $('table td');//.tabindex(1);
+    // $xCell.addClass('placeParty');
+    // $('table td').eq(x).css('background', 'red')
+    $('table tr:nth-child(' + x + ') td:nth-child(' + y + ')').css('background', 'red')
+    // setInterval(function () {
+    //     $firstCell.toggleClass('green red')
+    // }, 1000);
+    //
+    // for (var j = 0; j < 3; j++) {
+    //     $tr = $('<tr>');
+    //     for (var i = 0; i < 3; i++) {
+    //         $td = $('<td>');
+    //         $tr.append($td);
+    //     }
+    //     $table.append($tr);
+    // }
+}
