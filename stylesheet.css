@@ -7,7 +7,8 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("img/colorfulbc.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;}
+    background-size: cover;
+}
 
 .content-background  {
     background-color: rgba(0,0,0,0.65);
@@ -66,6 +67,7 @@ hr {
 .thumbnail{
     position: relative;
 }
+
 .textThumbnail{
     position: absolute;
     font-weight:normal;
@@ -80,10 +82,7 @@ hr {
     transition:visibility 0s linear 0.2s,opacity 0.1s linear;
 }
 
-.eventName{
-    position: relative;
-
-}
+.eventName, 
 .eventPlace{
     position: relative;
 }
@@ -378,7 +377,6 @@ hr {
     color: rgb(250, 175, 24);
     text-decoration: none;
 }
-
 
 .flex {
     display: flex;
