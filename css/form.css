@@ -22,10 +22,27 @@ input, textarea, button {
 #success,
 #fail {
     position: absolute;
-    visibility: hidden;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
 }
 
-#success:after,
-#fail:after {
-    visibility: visible;
+.dreamersfail {
+    color: red;
+  }
+
+.dreamersbutton {
+    color: rgb(250, 175, 24);
+    position: fixed;
+    font-size: 1.4em;
+    font-family: Arial, Verdana, sans-serif;
+    left: 0;
+    bottom: 2em;
+    right: 0;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }

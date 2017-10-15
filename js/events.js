@@ -15,47 +15,23 @@ function showResult() {
         //LOOP OVER DATA
         for (i = 0; i < response.length; i++) {
             //check if link exist
-            if(response[i]['urls']['www']!==undefined){
-                div += '<a href="'+response[i]['urls']['www']+'" title="Otworz wydarzenie">';
-            }
+            div+=checkIfUrlExist(response[i]);
+            // create thumbnail
             div += '<div class="col-md-4 col-sm-6 col-xs-12">';
-            //check if attachment exists
-            if(response[i]['attachments']['0']!==undefined){
-
-                var link="http://planer.info.pl/image/event/"+response[i]['id']+"/"+response[i]['attachments']['fileName'];
-                div += '<div class="thumbnail img-responsive" style="background-image: url('+link+'); height: 250px;">';
-            }
-            else{
-                div += '<div class="thumbnail img-responsive" style="background-image: url(\'http://lorempixel.com/300/300/nightlife\'); height: 250px;background-size:cover";>';
-            }
-
-
-                div += '<div class="eventMain">';
-
-           // div += '<img class="thumbImages" src="http://lorempixel.com/400/300/nightlife/" width="400" height="300">';
+            div +=checkIfAttachmentExist(response[i]);
+            div += '<div class="eventMain">';
+            // show basic event info
             div += '<p class="textThumbnail eventName "><strong>' + response[i]['name'] + '</strong></p><br>';
             div += '<p class="textThumbnail eventPlace ">Miejsce: ' + response[i]['place']['name'] + '</p>';
             div += '</div>';
-
             //format dates
             div += '<div class="eventDetails">';
-
-            var startDate = response[i]['startDate'].substring(0, response[i]['startDate'].length - 5);
-            startDate = startDate.replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ');
-            var endDate = response[i]['endDate'].substring(0, response[i]['endDate'].length - 5);
-            endDate = endDate.replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ');
-            div += '<p class="textThumbnail eventDetailsText details">Start: ' + startDate + '</p>';
+            div += '<p class="textThumbnail eventDetailsText details">Start: ' + getStartDateNode(response[i])+ '</p>';
             div += '<p class="textThumbnail eventDetailsText details"></br>  </p>';
-            div += '<p class="textThumbnail eventDetailsText details">Koniec: ' + endDate + '</p>';
-            // div += '<button  type="button" class="btn btn-default buttonThumbnail" onclick=" window.open(\'' + response[i]['urls']['www'] + '\',\'_blank\')">Strona wydarzenia</button>';
+            div += '<p class="textThumbnail eventDetailsText details">Koniec: ' + getEndtDateNode(response[i])+ '</p>';
             div += '</div>';
             div += '</div>';
-
-
-
-            if(response[i]['urls']['www']!==undefined){
-                div += '</a>';
-            }
+            div += '</a>';
             div += '</div>';
             div += '</div>';
 
@@ -69,13 +45,39 @@ function showResult() {
     });
 
 }
+function  checkIfAttachmentExist(event) {
+    var div="";
+    if(event['attachments']['0']!==undefined){
 
-function getDateNode(event) {
-    return event['startDate']
-        .substring(0, event['startDate'].length - 5)
-        .replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ';
+        var link="http://planer.info.pl/image/event/"+event['id']+"/"+event['attachments']['fileName'];
+        div += '<div class="thumbnail img-responsive" style="background-image: url('+link+'); height: 250px;">';
+    }
+    else{
+        div += '<div class="thumbnail img-responsive" style="background-image: url(\'http://lorempixel.com/300/300/nightlife\'); height: 250px;background-size:cover";>';
+    }
+    return div;
 }
-
+function checkIfUrlExist(event){
+    var div="";
+    if(event['urls']['www']!==undefined){
+        div += '<a href="'+event['urls']['www']+'" title="Otworz wydarzenie">';
+    }
+    else{
+        div += '<a href="'+event['urls']['www']+'" title="Brak odnośnika do wydarzenia">';
+    }
+    return div;
+}
+function getStartDateNode(event) {
+    return event['startDate'].substring(0, event['startDate'].length - 5).replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ');
+}
+function getEndtDateNode(event) {
+    return event['startDate'].substring(0, event['startDate'].length - 5).replace('T', '</p><p class="textThumbnail eventDetailsText details">Godzina: ');
+}
+var ticketTypes = {
+    UNKNOWN: 'unknown',
+    FREE: 'free',
+    PAID: 'paid'
+};
 
 showResult();
 var checkbox1 = $( "input[type=checkbox][name=checkbox1]" );
@@ -109,18 +111,16 @@ function filterEvents() {
 
 }
 
-var ticketTypes = {
-    UNKNOWN: 'unknown',
-    FREE: 'free'
-};
+
 
 function isUnknown(value) {
     return value === ticketTypes.UNKNOWN;
 }
 
-collection = collection.filter(isUnknown);
 
 function getFilterValues() {
+    //collection = collection.filter(isUnknown);
+
     var $filters = $(".option-list").find($("input[type=checkbox]"));
 
     return $filters.map(function(idx, filter) {

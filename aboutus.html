@@ -37,14 +37,15 @@
         </div>
     </div>
 </nav>
-<section class="container">
-    <div class="content-background">
+  
+<section class="container flex">
+    <div class="content-background flex-item">
     <h2>Trójmiejski Kalendarz Imprez</h2>
     <h3>Najlepsza wyszukiwarka - najlepsze Imprezy</h3>
     <hr>
     <h4>O nas</h4>
     <hr>
-            <div id="myCarousel" class="carousel slide carouselSize" data-ride="carousel">
+            <div id="myCarousel" class="carousel slide carouselSize hidden-md hidden-lg" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -53,38 +54,104 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="img/marek.jpg" alt="Marek Koprowski">
-                        <p>Marek Koprowski<br>Lubi spać</p>
-                    </div>
-
-                    <div class="item">
-                        <img src="img/andrzej.jpg" alt="Andrzej Puzynsk">
-                        <p>Andrzej Puzyński<br>Bardziej lubi spać</p>
-                    </div>
-
-                    <div class="item">
-                        <img src="img/damian.jpg" alt="Damian Wisniewski">
-                        <p>Damian Wisniewski<br>Śpi</p>
-                    </div>
-                    <div class="item">
-                        <img src="img/przemyslaw.jpg" alt="Przemysław Lemke">
-                        <p>Przemysław Lemke<br>Zaspał</p>
-                    </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/marek.jpg" alt="Marek Koprowski">
+                    <p>Marek Koprowski<br>Lubi spać</p>
                 </div>
 
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="item">
+                    <img src="img/andrzej.jpg" alt="Andrzej Puzyński">
+                    <p>Andrzej Puzyński<br>Bardziej lubi spać</p>
+                </div>
+
+                <div class="item">
+                    <img src="img/damian.jpg" alt="Damian Wiśniewski">
+                    <p>Damian Wiśniewski<br>Śpi</p>
+                </div>
+                <div class="item">
+                    <img src="img/przemyslaw.jpg" alt="Przemysław Lemke">
+                    <p>Przemysław Lemke<br>Zaspał</p>
+                </div>
             </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="container-fluid hidden-xs hidden-sm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="caption-style">
+                        <img src="img/marek.jpg" alt="Marek" class="img-responsive">
+                        <div class="title">
+                            <div>
+                                <h2>Marek</h2>
+                                <h4>Koprowski</h4>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <p>"Sukces? To postępowanie zgodnie z wartościami, które wyznaje. Tym co jest dla mnie najważniejsze i co nadaje mojemu życiu sens."</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="caption-style">
+                        <img src="img/andrzej.jpg" alt="Andrzej" class="img-responsive">
+                        <div class="title">
+                            <div>
+                                <h2>Andrzej</h2>
+                                <h4>Puzyński</h4>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <p>"Jedyna pewna rzecz w życiu to Zmiana!"</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="caption-style">
+                        <img src="img/damian.jpg" alt="Damian" class="img-responsive">
+                        <div class="title">
+                            <div>
+                                <h2>Damian</h2>
+                                <h4>Wiśniewski</h4>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="caption-style">
+                        <img src="img/przemyslaw.jpg" alt="Przemysław" class="img-responsive">
+                        <div class="title">
+                            <div>
+                                <h2>Przemysław</h2>
+                                <h4>Lemke</h4>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <footer class="container-fluid text-center footer-style">
@@ -94,19 +161,24 @@
                 <p>Znajdź nas na:</p>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://www.instagram.com/infoshare/"><i class="fa fa-instagram"></i> <p>Instagram</p></a>
+                <a target="_blank" href="https://www.instagram.com/infoshare/"><i class="fa fa-instagram"></i>
+                    <p>Instagram</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://pl-pl.facebook.com/infosharepl/"><i class="fa fa-facebook"></i> <p>Facebook</p></a>
+                <a target="_blank" href="https://pl-pl.facebook.com/infosharepl/"><i class="fa fa-facebook"></i>
+                    <p>Facebook</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://twitter.com/infosharepl"><i class="fa fa-twitter"></i> <p>Twitter</p></a>
+                <a target="_blank" href="https://twitter.com/infosharepl"><i class="fa fa-twitter"></i>
+                    <p>Twitter</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://www.youtube.com/user/infoSharePL"><i class="fa fa-youtube-play"></i> <p>YouTube</p></a>
+                <a target="_blank" href="https://www.youtube.com/user/infoSharePL"><i class="fa fa-youtube-play"></i>
+                    <p>YouTube</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://pl.linkedin.com/company/infoshare-pl"> <i class="fa fa-linkedin"></i> <p>Linkedin</p></a>
+                <a target="_blank" href="https://pl.linkedin.com/company/infoshare-pl"> <i class="fa fa-linkedin"></i>
+                    <p>Linkedin</p></a>
             </div>
         </div>
         <p>® Dreamer Group Est. 2017</p>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,58 +34,88 @@
                 <li class="active"><a href="product.html">O produkcie</a></li>
                 <li><a href="contactus.html">Kontakt</a></li>
             </ul>
-
         </div>
     </div>
 </nav>
 <section class="container">
     <div class="content-background">
-            <h2>Trójmiejski Kalendarz Imprez</h2>
-            <h3>Najlepsza wyszukiwarka - najlepsze Imprezy</h3>
-
-            <!--Odtąd dodane opis planowanych funkcji produktu-->
-            <!--modyfikacja: dodać podział na 4 okienka z wyraxnym tytułem i krotkim rozwinięciem.
-            Opis może być rozwijany-->
-            <div class="product-container">
-                <hr>
-                <h4>Planowane funkcje produktu</h4>
-                <hr>
-
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 prod_item">
-                        <div><i class="fa fa-eye fa-5x"></i></div>
-                        <div class="product-title"><h4 class="text-center">Szybkość i czytelność</h4></div>
-                        <p class="lead text-left product-text">Wyświetlone wydarzenia zawierają krótki opis nazwy, czasu i&nbsp;miejsca, dzięki czemu łatwo i szybko znajdziesz&nbsp;to, co&nbsp;Cię interesuje.
+        <div class="product-container">
+            <h1 class="product-title">Planowane funkcje produktu</h1>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 prod_item" data-toggle="collapse"
+                     data-target="#speed-and-clarity">
+                    <div class="neon">
+                        <i class="fa fa-eye fa-5x"></i>
+                        <h4 class="text-center">Szybkość i czytelność</h4>
+                    </div>
+                    <div id="speed-and-clarity" class="collapse">
+                        <p class="lead text-left product-text">Wyświetlone wydarzenia zawierają krótki opis nazwy, czasu
+                            i&nbsp;miejsca, dzięki czemu łatwo i&nbsp;szybko znajdziesz&nbsp;to, co&nbsp;Cię interesuje.
                             Klikając "Opis" otrzymasz szczegółowe informacje dotyczące interesującego wydarzenia.</p>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 prod_item">
-                        <div><i class="fa fa-check-square-o fa-5x"></i></div>
-                        <div class="product-title"><h4 class="text-center">Filtry przeglądania</h4></div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 prod_item" data-toggle="collapse" data-target="#filters">
+                    <div class="neon">
+                        <i class="fa fa-check-square-o fa-5x"></i>
+                        <h4 class="text-center">Filtry przeglądania</h4>
+                    </div>
+                    <div id="filters" class="collapse">
                         <p class="lead text-left product-text">Aby zawęzić wyświetlanie użyj filtrów wyszukiwania:</p>
                         <ul class="text-left product-text list-unstyled">
-                            <li class="product-list"><i class="fa fa-check-square-o fa-lg"></i>&nbsp;<span class="text-uppercase">Data od do</span> - pozwala wyświetlić wydarzenia odbywające&nbsp;się w&nbsp;określonym przedziale czasu.</li>
-                            <li class="product-list"><i class="fa fa-check-square-o fa-lg"></i>&nbsp;<span class="text-uppercase">Typ biletu</span> - pozwala wyświetlić tylko wydarzenia z&nbsp;wymaganym biletem wstępu lub z&nbsp;wstępem wolnym.</li>
-                            <li class="product-list"><i class="fa fa-check-square-o fa-lg"></i>&nbsp;<span class="text-uppercase">Kategoria</span> - umożliwia wyświeltenie wydarzeń należących do&nbsp;jednej z&nbsp;zadanych kategorii, np.&nbsp;teatr, kino, koncert itp.</li>
-                            <li class="product-list"><i class="fa fa-check-square-o fa-lg"></i>&nbsp;<span class="text-uppercase">Miejsce</span> - umożliwia wyświetlenie wydarzeń odbywających&nbsp;się w&nbsp;określonycm miejscu.</li>
-                            <li class="product-list"><i class="fa fa-check-square-o fa-lg"></i>&nbsp;<span class="text-uppercase">Organizator</span> - umożliwia wyświetlenie wydarzeń organizowanych przez wybranego organizatora.</li>
+                            <li class="product-list">
+                                <i class="fa fa-check-square-o fa-lg"></i>&nbsp
+                                <span class="text-uppercase">Data od do</span> - pozwala wyświetlić wydarzenia
+                                odbywające&nbsp;się w&nbsp;określonym przedziale czasu.
+                            </li>
+                            <li class="product-list">
+                                <i class="fa fa-check-square-o fa-lg"></i>
+                                <span class="text-uppercase">Typ biletu</span> - pozwala wyświetlić tylko wydarzenia z&nbsp;wymaganym
+                                biletem wstępu lub z&nbsp;wstępem wolnym.
+                            </li>
+                            <li class="product-list">
+                                <i class="fa fa-check-square-o fa-lg"></i>
+                                <span class="text-uppercase">Kategoria</span> - umożliwia wyświeltenie wydarzeń
+                                należących do&nbsp;jednej z&nbsp;zadanych kategorii, np.&nbsp;teatr, kino, koncert itp.
+                            </li>
+                            <li class="product-list">
+                                <i class="fa fa-check-square-o fa-lg"></i>
+                                <span class="text-uppercase">Miejsce</span> - umożliwia wyświetlenie wydarzeń
+                                odbywających&nbsp;się w&nbsp;określonycm miejscu.
+                            </li>
+                            <li class="product-list">
+                                <i class="fa fa-check-square-o fa-lg"></i>
+                                <span class="text-uppercase">Organizator</span> - umożliwia wyświetlenie wydarzeń
+                                organizowanych przez wybranego organizatora.
+                            </li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 prod_item">
-                        <div><i class="fa fa-star-o fa-5x"></i></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 prod_item" data-toggle="collapse"
+                     data-target="#event-of-a-day">
+                    <div class="neon">
+                        <i class="fa fa-star-o fa-5x"></i>
                         <h4 class="text-center">Wydarzenie dnia</h4>
-                        <div class="product-clear"></div>
-                        <p class="lead text-left product-text">Wyróżniamy wydarzenie dnia abyś nie przegapił najciekawszych imprez. To również dobra propozycja dla niezdecydowanych. Wydarzenie dnia wyświetla się w wyskakującym oknie.</p>
                     </div>
-
-                    <div class="col-md-6 col-sm-12 col-xs-12 prod_item">
-                        <div><i class="fa fa-user-circle-o fa-5x"></i></div>
+                    <div class="product-clear"></div>
+                    <div id="event-of-a-day" class="collapse">
+                        <p class="lead text-left product-text">Wyróżniamy wydarzenie dnia abyś nie&nbsp;przegapił
+                            najciekawszych imprez. To&nbsp;również dobra propozycja dla&nbsp;niezdecydowanych.
+                            Wydarzenie dnia wyświetla&nbsp;się w&nbsp;wyskakującym oknie.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 prod_item" data-toggle="collapse" data-target="#log">
+                    <div class="neon">
+                        <i class="fa fa-user-circle-o fa-5x"></i>
                         <h4 class="text-center">Logowanie</h4>
-                        <div class="product-clear"></div>
-                        <p class="lead text-left product-text">Do Trójmiejskiego Kalendarza Imprez możesz zalogować się bezpośrednio z zakładki logowanie lub przez konto Facebooka albo Gooogle.</p></div>
                     </div>
+                    <div class="product-clear"></div>
+                    <div id="log" class="collapse">
+                        <p class="lead text-left product-text">Do Trójmiejskiego Kalendarza Imprez możesz zalogować&nbsp;się
+                            bezpośrednio z&nbsp;zakładki logowanie lub&nbsp;przez&nbsp;konto Facebooka albo Gooogle.</p>
+                    </div>
+                </div>
             </div>
     </div>
 </section>
@@ -97,24 +126,49 @@
                 <p>Znajdź nas na:</p>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://www.instagram.com/infoshare/"><i class="fa fa-instagram"></i> <p>Instagram</p></a>
+                <a target="_blank" href="https://www.instagram.com/infoshare/"><i class="fa fa-instagram"></i>
+                    <p>Instagram</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://pl-pl.facebook.com/infosharepl/"><i class="fa fa-facebook"></i> <p>Facebook</p></a>
+                <a target="_blank" href="https://pl-pl.facebook.com/infosharepl/"><i class="fa fa-facebook"></i>
+                    <p>Facebook</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://twitter.com/infosharepl"><i class="fa fa-twitter"></i> <p>Twitter</p></a>
+                <a target="_blank" href="https://twitter.com/infosharepl"><i class="fa fa-twitter"></i>
+                    <p>Twitter</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://www.youtube.com/user/infoSharePL"><i class="fa fa-youtube-play"></i> <p>YouTube</p></a>
+                <a target="_blank" href="https://www.youtube.com/user/infoSharePL"><i class="fa fa-youtube-play"></i>
+                    <p>YouTube</p></a>
             </div>
             <div class="col-sm-2 flex-item">
-                <a target="_blank" href="https://pl.linkedin.com/company/infoshare-pl"> <i class="fa fa-linkedin"></i> <p>Linkedin</p></a>
+                <a target="_blank" href="https://pl.linkedin.com/company/infoshare-pl"> <i class="fa fa-linkedin"></i>
+                    <p>Linkedin</p></a>
             </div>
         </div>
         <p>® Dreamer Group Est. 2017</p>
     </div>
 </footer>
 <script src="js/Cookies.js"></script>
+<script>
+    function blick() {
+        var delay = 0;
+        document.querySelectorAll('.neon').forEach(function (e) {
+            setTimeout(function () {
+                $(e).toggleClass('neon-blick');
+//                if( e.className.indexOf('neon-blik') !== -1 ){
+//                    e.className = e.className.replace('neon-blik','');
+//                }else {
+//                    e.className += ' neon-blik';
+//                }
+            }, delay += 80);
+        });
+
+    };
+    (function () {
+        setTimeout(blick, 100);
+        setTimeout(blick, 240);
+    }());
+</script>
 </body>
 </html>
