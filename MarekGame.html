@@ -15,20 +15,23 @@
 <script>
 
     var myGamePiece;
+    var myBackground;
 
     function startGame() {
         myGameArea.start();
         myGamePiece = new component(100, 100, "red", 350, 550);
+        myBackground = new component(1200, 650, "img/background-marek-game.jpg", 0, 0, "image");
     }
 
     var myGameArea = {
         canvas : document.createElement("canvas"),
         start : function() {
-            this.canvas.width = 800;
+            this.canvas.width = 1200;
             this.canvas.height = 650;
             this.context = this.canvas.getContext("2d");
             document.body.insertBefore(this.canvas, document.body.childNodes[0]);
             this.interval = setInterval(updateGameArea, 20);
+            this.frameNo = 0;
             window.addEventListener('keydown', function (e) {
                 myGameArea.key = e.keyCode;
             });
@@ -41,7 +44,12 @@
         }
     };
 
-    function component(width, height, color, x, y) {
+    function component(width, height, color, x, y, type) {
+        this.type = type;
+        if (type == "image") {
+            this.image = new Image();
+            this.image.src = color;
+        }
         this.gamearea = myGameArea;
         this.width = width;
         this.height = height;
@@ -51,8 +59,15 @@
         this.y = y;
         this.update = function() {
             ctx = myGameArea.context;
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
+            if (type == "image") {
+                ctx.drawImage(this.image,
+                    this.x,
+                    this.y,
+                    this.width, this.height);
+            } else {
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
         };
         this.newPos = function() {
             this.x += this.speedX;
@@ -62,6 +77,8 @@
 
     function updateGameArea() {
         myGameArea.clear();
+        myBackground.newPos();
+        myBackground.update();
         myGamePiece.speedX = 0;
         myGamePiece.speedY = 0;
         if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -5; }
