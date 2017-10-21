@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
         canvas {
-            border:1px solid #d3d3d3;
+            border:3px solid #d3d3d3;
             background-color: #f1f1f1;
-            margin-left: 20vh;
+            margin-left: 10vh;
             margin-top: 10vh;
         }
     </style>
@@ -19,15 +19,15 @@
 
     function startGame() {
         myGameArea.start();
-        myGamePiece = new component(100, 100, "red", 350, 550);
-        myBackground = new component(1200, 650, "img/background-marek-game.jpg", 0, 0, "image");
+        myGamePiece = new component(225, 225, "img/vocalist.png", 350, 650, "image");
+        myBackground = new component(1152, 868, "img/stage.png", 0, 0, "image");
     }
 
     var myGameArea = {
         canvas : document.createElement("canvas"),
         start : function() {
-            this.canvas.width = 1200;
-            this.canvas.height = 650;
+            this.canvas.width = 1152;
+            this.canvas.height = 868;
             this.context = this.canvas.getContext("2d");
             document.body.insertBefore(this.canvas, document.body.childNodes[0]);
             this.interval = setInterval(updateGameArea, 20);
