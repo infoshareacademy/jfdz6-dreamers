@@ -7,7 +7,8 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("img/colorfulbc.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;}
+    background-size: cover;
+}
 
 .content-background  {
     background-color: rgba(0,0,0,0.65);
@@ -39,29 +40,6 @@ section.container {
     bottom: 45px;
 }
 
-@media (max-width: 1199px) {
-    section.container {
-        min-height: 81.9vh;
-    }
-}
-
-@media (max-width: 767px) {
-    section.container {
-        min-height: 81.9vh;
-    }
-}
-
-@media (max-width: 482px) {
-    section.container {
-        min-height: 74.1vh;
-    }
-
-    .carouselSize {
-        width: auto;
-        margin-bottom: 30px;
-    }
-}
-
 hr {
     opacity: 0.9;
     background-color: #080808;
@@ -89,27 +67,24 @@ hr {
 .thumbnail{
     position: relative;
 }
+
 .textThumbnail{
     position: absolute;
     font-weight:normal;
-    /* color: #000000;*/
     color: rgb(250, 175, 24);
     background-color: rgba(63, 53, 61, 0.65);
-
     text-shadow: 1px 2px #000;
-
-
 }
+
 .eventMain{
     font-size: 18px;
     visibility: visible;
     transition:visibility 0s linear 0.2s,opacity 0.1s linear;
-
-
 }
-.eventName, .eventPlace{
-    position: relative;
 
+.eventName, 
+.eventPlace{
+    position: relative;
 }
 
 .eventDetails{
@@ -130,7 +105,6 @@ hr {
     background-color: rgba(0,0,0,0.75);
 }
 
-
 .buttonThumbnail{
     position: absolute;
     width: auto;
@@ -143,6 +117,159 @@ hr {
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
+.caption-style {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 1%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    background-color: #000000;
+}
+
+.caption-style *,
+.caption-style *:before,
+.caption-style *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.55s ease;
+    transition: all 0.55s ease;
+}
+
+.caption-style img {
+    backface-visibility: hidden;
+    vertical-align: top;
+    opacity: 0.9;
+}
+
+.caption-style .title {
+    position: absolute;
+    bottom: 2%;
+    left: 25px;
+    padding: 5px 10px 10px;
+}
+
+.caption-style .title:before,
+.caption-style .title:after {
+    height: 2px;
+    width: 500px;
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+}
+
+.caption-style .title:before {
+    top: 0;
+    left: 10px;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.caption-style .title:after {
+    bottom: 0;
+    right: 10px;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.caption-style .title div:before,
+.caption-style .title div:after {
+    width: 2px;
+    height: 500px;
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+}
+
+.caption-style .title div:before {
+    top: 10px;
+    right: 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.caption-style .title div:after {
+    bottom: 10px;
+    left: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.caption-style h2,
+.caption-style h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.caption-style h2 {
+    font-weight: 400;
+}
+
+.caption-style h4 {
+    display: block;
+    font-weight: 700;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    color: #000000;
+}
+
+.caption-style figcaption {
+    position: absolute;
+    bottom: 23%;
+    left: 25px;
+    text-align: left;
+    opacity: 0;
+    padding: 5px 60px 5px 10px;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.caption-style figcaption p {
+    margin: 0;
+}
+.caption-style a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.caption-style:hover img,
+.caption-style.hover img {
+    zoom: 1;
+    filter: alpha(opacity=35);
+    -webkit-opacity: 0.35;
+    opacity: 0.35;
+}
+
+.caption-style:hover .title:before,
+.caption-style.hover .title:before,
+.caption-style:hover .title:after,
+.caption-style.hover .title:after,
+.caption-style:hover .title div:before,
+.caption-style.hover .title div:before,
+.caption-style:hover .title div:after,
+.caption-style.hover .title div:after {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.caption-style:hover .title:before,
+.caption-style.hover .title:before,
+.caption-style:hover .title:after,
+.caption-style.hover .title:after {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+}
+
+.caption-style:hover figcaption,
+.caption-style.hover figcaption {
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
 
 .thumbnail:hover .eventMain{
     visibility: hidden;
@@ -269,6 +396,23 @@ hr {
     padding: 10px 15px;
 }
 
+@media (max-width: 482px) {
+    section.container {
+        min-height: 78.6vh;
+    }
+
+    .carouselSize {
+        width: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    section.container {
+        min-height: 86vh;
+    }
+}
+
 @media (max-width: 1199px) {
     .flex-text {
         flex: 100%;
@@ -302,5 +446,9 @@ hr {
     .img-text {
         bottom: 3em;
         left: 6em;
+    }
+
+    section.container {
+        min-height: 86vh;
     }
 }

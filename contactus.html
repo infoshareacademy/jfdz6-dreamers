@@ -30,6 +30,8 @@
                 e.preventDefault();
                 var inputValue = $("#a3").val();
                 if (parseInt(inputValue) === (random1 + random2)) {
+                    $("input").val('');
+                    $("textarea").val('');
                     $("#success").fadeIn( "slow" );
                     setTimeout(function() {
                         $("#success").fadeOut( "slow" );
