@@ -89,15 +89,18 @@
     }
 
     function updateGameArea() {
-        var x, height, minHeight, maxHeight;
+        var x, height, width, minHeight, maxHeight, minWidth, maxWidth;
         myGameArea.clear();
         myGameArea.frameNo += 2;
         if (myGameArea.frameNo == 1 || everyinterval(100)) {
             x = Math.random() * myGameArea.canvas.width;
             minHeight = 50;
-            maxHeight = 120;
+            maxHeight = 150;
+            minWidth = 50;
+            maxWidth = 150;
+            width = Math.floor(Math.random()*(maxWidth-minWidth+1)+minWidth);
             height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-            myObstacles.push(new component((Math.random() * 100) + 10, height, "red", x, 0));
+            myObstacles.push(new component(width, height, "red", x, 0));
         }
 
 
