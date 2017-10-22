@@ -6,8 +6,8 @@
         canvas {
             border:3px solid #d3d3d3;
             background-color: #f1f1f1;
-            margin-left: 10vh;
-            margin-top: 10vh;
+            margin-left: 5vh;
+            margin-top: 5vh;
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 
     function startGame() {
         myGameArea.start();
-        myGamePiece = new component(225, 225, "img/vocalist.png", 350, 650, "image");
+        myGamePiece = new component(225, 225, "img/vocalist.png", 465, 650, "image");
         myBackground = new component(1152, 868, "img/stage.png", 0, 0, "image");
     }
 
@@ -81,8 +81,8 @@
         myBackground.update();
         myGamePiece.speedX = 0;
         myGamePiece.speedY = 0;
-        if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -5; }
-        if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 5; }
+        if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -7; }
+        if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 7; }
         myGamePiece.newPos();
         myGamePiece.update();
     }
