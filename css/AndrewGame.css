@@ -1,13 +1,20 @@
 .cell {
     border: 1px solid black;
-    width: 12px;
-    height: 12px
-}
-
-.snake {
-    background: #c00;
+    width: 16px;
+    height: 16px
 }
 
 .party {
     background: blue;
 }
+
+.snake {
+    background: yellow;
+}
+
+.head {
+    background: red;
+    background-image: url('https://cdn4.iconfinder.com/data/icons/penguin/154/penguin-baby-small-animal-512.png');
+    background-size: 16px 16px;
+}
+
