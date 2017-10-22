@@ -16,11 +16,13 @@
 
     var myGamePiece;
     var myBackground;
+    var myObstacles = [];
 
     function startGame() {
         myGameArea.start();
         myGamePiece = new component(225, 225, "img/vocalist.png", 465, 650, "image");
         myBackground = new component(1152, 868, "img/stage.png", 0, 0, "image");
+
     }
 
     var myGameArea = {
@@ -42,6 +44,7 @@
         clear : function(){
             this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
+
     };
 
     function component(width, height, color, x, y, type) {
@@ -57,9 +60,11 @@
         this.speedY = 0;
         this.x = x;
         this.y = y;
-        this.update = function() {
+        this.update = function(move) {
+            move = move || 0;
             ctx = myGameArea.context;
             if (type == "image") {
+
                 ctx.drawImage(this.image,
                     this.x,
                     this.y,
@@ -68,15 +73,35 @@
                 ctx.fillStyle = color;
                 ctx.fillRect(this.x, this.y, this.width, this.height);
             }
+//                ctx.beginPath();
+//                ctx.arc(this.x + (move*20), this.y+(move*20), 50, 0, 2 * Math.PI, false);
+//                ctx.fillStyle = 'green';
+//                ctx.fill();
+//                ctx.lineWidth = 5;
+//                ctx.strokeStyle = '#003300';
+//                ctx.stroke();
         };
         this.newPos = function() {
             this.x += this.speedX;
             this.y += this.speedY;
         }
+
     }
 
     function updateGameArea() {
+        var x, height, minHeight, maxHeight;
+
         myGameArea.clear();
+        myGameArea.frameNo += 1;
+        if (myGameArea.frameNo == 1 || everyinterval(150)) {
+            x = Math.random() * myGameArea.canvas.width;
+            minHeight = 30;
+            maxHeight = 120;
+            height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+            myObstacles.push(new component(100, height, "red", x, 0));
+        }
+
+
         myBackground.newPos();
         myBackground.update();
         myGamePiece.speedX = 0;
@@ -85,6 +110,17 @@
         if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 7; }
         myGamePiece.newPos();
         myGamePiece.update();
+
+        for (i = 0; i < myObstacles.length; i += 1) {
+            console.log( myObstacles[i]);
+            myObstacles[i].y += 10;
+            myObstacles[i].update(i);
+        }
+    }
+
+    function everyinterval(n) {
+        if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+        return false;
     }
 </script>
 
