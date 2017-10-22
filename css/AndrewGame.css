@@ -3,3 +3,11 @@
     width: 12px;
     height: 12px
 }
+
+.snake {
+    background: #c00;
+}
+
+.party {
+    background: blue;
+}
