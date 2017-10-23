@@ -73,13 +73,6 @@
                 ctx.fillStyle = color;
                 ctx.fillRect(this.x, this.y, this.width, this.height);
             }
-//                ctx.beginPath();
-//                ctx.arc(this.x + (move*20), this.y+(move*20), 50, 0, 2 * Math.PI, false);
-//                ctx.fillStyle = 'green';
-//                ctx.fill();
-//                ctx.lineWidth = 5;
-//                ctx.strokeStyle = '#003300';
-//                ctx.stroke();
         };
         this.newPos = function() {
             this.x += this.speedX;
@@ -89,18 +82,28 @@
     }
 
     function updateGameArea() {
-        var x, height, width, minHeight, maxHeight, minWidth, maxWidth;
+        var positionOfTomato, positionOfCup, positionOfFlowers, positionOfTeddyBear, cup, flowers, teddyBear, tomato;
         myGameArea.clear();
-        myGameArea.frameNo += 2;
+        myGameArea.frameNo += 1;
         if (myGameArea.frameNo == 1 || everyinterval(100)) {
-            x = Math.random() * myGameArea.canvas.width;
-            minHeight = 50;
-            maxHeight = 150;
-            minWidth = 50;
-            maxWidth = 150;
-            width = Math.floor(Math.random()*(maxWidth-minWidth+1)+minWidth);
-            height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-            myObstacles.push(new component(width, height, "red", x, 0));
+            positionOfTomato = Math.random() * myGameArea.canvas.width;
+            tomato = new component(70, 70, "img/pomidor.png", positionOfTomato, 0, "image");
+            myObstacles.push(tomato);
+        }
+        if (myGameArea.frameNo == 1 || everyinterval(133)) {
+            positionOfCup = Math.random() * myGameArea.canvas.width;
+            cup = new component(60, 100, "img/cup.png", positionOfCup, 0, "image");
+            myObstacles.push(cup);
+        }
+        if (myGameArea.frameNo == 1 || everyinterval(80)) {
+            positionOfFlowers = Math.random() * myGameArea.canvas.width;
+            flowers = new component(130, 100, "img/flowers.png", positionOfFlowers, 0, "image");
+            myObstacles.push(flowers);
+        }
+        if (myGameArea.frameNo == 1 || everyinterval(211)) {
+            positionOfTeddyBear = Math.random() * myGameArea.canvas.width;
+            teddyBear = new component(130, 150, "img/teddy-bear.png", positionOfTeddyBear, 0, "image");
+            myObstacles.push(teddyBear);
         }
 
 
@@ -108,8 +111,8 @@
         myBackground.update();
         myGamePiece.speedX = 0;
         myGamePiece.speedY = 0;
-        if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -7; }
-        if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 7; }
+        if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -10; }
+        if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 10; }
         myGamePiece.newPos();
         myGamePiece.update();
 
