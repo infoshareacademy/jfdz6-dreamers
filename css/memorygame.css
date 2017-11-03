@@ -3,21 +3,26 @@
     float: left;
     width: 100px;
     height: 100px;
-    opacity: 0.7;
+    opacity: 0.2;
+    cursor: pointer;
 }
 
-#first {
+.lightUp {
+    opacity: 1;
+}
+
+#div1 {
     background-color: red;
 }
 
-#second {
+#div2 {
     background-color: green;
 }
 
-#third {
+#div3 {
     background-color: blue;
 }
 
-#fourth {
+#div4 {
     background-color: yellow;
 }
