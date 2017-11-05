@@ -120,7 +120,7 @@
 
         function detectCollision () {
             myObstacles.forEach(function (obstacle) {
-                if (obstacle.y + obstacle.height >= myVocalist.y && obstacle.y <= myVocalist.y + myVocalist.height) {
+                if (obstacle.y + obstacle.height >= myVocalist.y && obstacle.y <= myVocalist.y + myVocalist.height/2) {
                     var right = myVocalist.x + myVocalist.width;
                     var left = myVocalist.x;
                     if (obstacle.x <= right && obstacle.x >= left) {
@@ -145,7 +145,7 @@
 
             factories.forEach(function (factory) {
                 if ((myGameArea.frameNo / factory.frequency) % 1 === 0) {
-                    var position = Math.random() * myGameArea.canvas.width;
+                    var position = (Math.random() * myGameArea.canvas.width) - 10;
                     myObstacles.push(factory.create(position))
                 }
             });
