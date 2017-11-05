@@ -7,16 +7,35 @@ var $div4 = $('#div4');
 var player = [];
 var choiceEnabled = false;
 var correct = false;
+var $play = $('.play');
+var $replay = $('.repaly');
+var activePlay = true;
+
+$play.click(function () {
+    if (activePlay) {
+        randomArray.length = 0;
+        player.length = 0;
+        randomCounter++;
+        getRandomArray()
+    }
+    activePlay = false;
+    clearInterval()
+});
+
+$replay.click(function () {
+    $play.click
+
+});
 
 function getRandomArray() {
-    for (i = 0; i < randomCounter; i++) {
+    for (j = 0; j < randomCounter; j++) {
         randomArray.push(Math.floor((Math.random() * 4))+1)
     }
+    console.log(randomArray);
     showWhatToRepeat();
 }
 
-getRandomArray();
-console.log(randomArray);
+
 
 function delayShow(i, delay){
     setTimeout(function(){
@@ -25,15 +44,21 @@ function delayShow(i, delay){
 }
 
 function showButton(num) {
-    $('#div' + num).addClass('lightUp');
+    $('#div' + num).animate({opacity: 1});
     setTimeout(function() {
-        $('#div' + num).removeClass('lightUp');
+        $('#div' + num).animate({opacity: 0.2});
     }, 800);
+}
+
+function playerButton(num) {
+    $('#div' + num).animate({opacity: 1});
+    setTimeout(function() {
+        $('#div' + num).animate({opacity: 0.2});
+    }, 400);
 }
 
 
 function showWhatToRepeat() {
-    choiceEnabled = false;
     for (var i = 0; i < randomArray.length; i++) {
         delayShow(i, (1000 + (i*1000)));
         if (i === randomArray.length - 1){
@@ -42,58 +67,51 @@ function showWhatToRepeat() {
             }, 1000 + (i*1000))
         }
     }
-    player = [];
-    choiceEnabled = true;
 }
 
 function playerTurn(button) {
-    if (choiceEnabled) {
+    if (choiceEnabled === true) {
         player.push(button);
         if (randomArray.length === player.length) {
             choiceEnabled = false;
             for (k = 0; k < randomArray.length; k++) {
                 if (randomArray[k] === player [k]) {
                     correct = true;
-                    correction()
+                    activePlay = true;
+                    console.log('Brawo')
+                } else {
+                    correct = false;
+                    activePlay = false
                 }
             }
         }
     }
 }
 
-function correction() {
-    if (correct) {
-        setInterval(console.log('Brawo'), 1000);
-        randomArray = [];
-        randomCounter++;
-        getRandomArray()
-    }
-}
-
 $div1.click(function() {
     if(choiceEnabled){
-        showButton(1);
+        playerButton(1);
         playerTurn(1);
     }
 });
 
 $div2.click(function() {
     if(choiceEnabled){
-        showButton(2);
+        playerButton(2);
         playerTurn(2);
     }
 });
 
 $div3.click(function() {
     if(choiceEnabled){
-        showButton(3);
+        playerButton(3);
         playerTurn(3);
     }
 });
 
 $div4.click(function() {
     if(choiceEnabled){
-        showButton(4);
+        playerButton(4);
         playerTurn(4);
     }
 });

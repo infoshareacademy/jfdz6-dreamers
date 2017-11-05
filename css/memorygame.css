@@ -7,8 +7,13 @@
     cursor: pointer;
 }
 
-.lightUp {
-    opacity: 1;
+
+
+.container {
+    background-image: url("/img/ukulele.jpg");
+    height: 736px;
+    width: 736px;
+    margin: 0 auto;
 }
 
 #div1 {
