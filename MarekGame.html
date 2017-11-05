@@ -19,7 +19,6 @@
         var myVocalist;
         var myBackground;
         var myObstacles = [];
-
         var counter = 30;
         var gameCountdown = setInterval(function () {
             console.log(counter);
@@ -84,6 +83,7 @@
                     ctx.fillStyle = color;
                     ctx.fillRect(this.x, this.y, this.width, this.height);
                 }
+                detectCollision()
             };
             this.newPos = function () {
                 this.x += this.speedX;
@@ -91,7 +91,6 @@
             }
 
         }
-
         var factories = [
             {
                 create: function (pos) {
@@ -118,6 +117,27 @@
                 frequency: 211
             }
         ];
+
+        function detectCollision () {
+            myObstacles.forEach(function (obstacle) {
+                if (obstacle.y + obstacle.height >= myVocalist.y && obstacle.y <= myVocalist.y + myVocalist.height) {
+                    var right = myVocalist.x + myVocalist.width;
+                    var left = myVocalist.x;
+                    if (obstacle.x <= right && obstacle.x >= left) {
+                        myObstacles = myObstacles.filter(function (item) {
+                            return item !== obstacle
+                        });
+                        console.log('collide', obstacle)
+                    }
+                    if (obstacle.x + obstacle.width <= right && obstacle.x + obstacle.width >= left) {
+                        myObstacles = myObstacles.filter(function (item) {
+                            return item !== obstacle
+                        });
+                        console.log('collide', obstacle)
+                    }
+                }
+            })
+        };
 
         function updateGameArea() {
             myGameArea.clear();
