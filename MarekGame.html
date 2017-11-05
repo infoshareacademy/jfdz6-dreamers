@@ -83,10 +83,10 @@
                     ctx.fillStyle = color;
                     ctx.fillRect(this.x, this.y, this.width, this.height);
                 }
-                detectCollision()
+                detectCollision();
             };
             this.newPos = function () {
-                this.x += this.speedX;
+                this.x = Math.max(0, Math.min(this.x + this.speedX, myBackground.width - this.width));
                 this.y += this.speedY;
             }
 
@@ -137,7 +137,7 @@
                     }
                 }
             })
-        };
+        }
 
         function updateGameArea() {
             myGameArea.clear();
