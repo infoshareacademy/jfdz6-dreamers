@@ -5,14 +5,12 @@
     height: 100px;
     opacity: 0.2;
     cursor: pointer;
+    margin: 15px;
+
 }
 
-
-
 .container {
-    background-image: url("/img/ukulele.jpg");
-    height: 736px;
-    width: 736px;
+    width: 520px;
     margin: 0 auto;
 }
 
