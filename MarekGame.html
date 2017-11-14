@@ -21,13 +21,18 @@
         var myObstacles = [];
         var counter = 30;
         var gameCountdown = setInterval(function () {
-            console.log(counter);
             counter--;
             if (counter === 0) {
                 alert("Game Over!!");
                 clearInterval(gameCountdown);
+                document.location.reload();
             }
         }, 1000);
+        function drawCounter() {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "#f0f0f0";
+            ctx.fillText("Time to concert end: "+counter, 8, 80);
+        }
 
         function startGame() {
             myGameArea.start();
@@ -191,7 +196,7 @@
             }
             myVocalist.newPos();
             myVocalist.update();
-
+            drawCounter();
             myObstacles.forEach(function (obstacle, index) {
                 obstacle.y += 10;
                 obstacle.update(index)
