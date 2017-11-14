@@ -57,7 +57,8 @@
             }
         };
 
-        function Component(width, height, color, x, y, type) {
+        function Component(width, height, color, x, y, type, category) {
+            this.category = category;
             this.type = type;
             if (type === "image") {
                 this.image = new Image();
@@ -94,25 +95,25 @@
         var factories = [
             {
                 create: function (pos) {
-                    return new Component(70, 70, "img/pomidor.png", pos, 0, "image")
+                    return new Component(70, 70, "img/pomidor.png", pos, 0, "image", "pomidor")
                 },
                 frequency: 100
             },
             {
                 create: function (pos) {
-                    return new Component(60, 100, "img/cup.png", pos, 0, "image");
+                    return new Component(60, 100, "img/cup.png", pos, 0, "image", "kubek");
                 },
                 frequency: 133
             },
             {
                 create: function (pos) {
-                    return new Component(130, 100, "img/flowers.png", pos, 0, "image");
+                    return new Component(130, 100, "img/flowers.png", pos, 0, "image", "kwiaty");
                 },
                 frequency: 80
             },
             {
                 create: function (pos) {
-                    return new Component(130, 150, "img/teddy-bear.png", pos, 0, "image")
+                    return new Component(130, 150, "img/teddy-bear.png", pos, 0, "image", "miś")
                 },
                 frequency: 211
             }
