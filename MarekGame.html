@@ -113,9 +113,9 @@
             },
             {
                 create: function (pos) {
-                    return new Component(130, 150, "img/teddy-bear.png", pos, 0, "image", "miś")
+                    return new Component(130, 150, "img/teddy-bear.png", pos, 0, "image", "misiek")
                 },
-                frequency: 211
+                frequency: 300
             }
         ];
 
@@ -128,13 +128,41 @@
                         myObstacles = myObstacles.filter(function (item) {
                             return item !== obstacle
                         });
-                        console.log('collide', obstacle)
+                        console.log('collide', obstacle);
+                        switch (obstacle.category) {
+                            case "pomidor":
+                                counter -= 2;
+                                break;
+                            case "kubek":
+                                counter -= 1;
+                                break;
+                            case "kwiaty":
+                                counter += 1;
+                                break;
+                            case "misiek":
+                                counter += 3;
+                                break;
+                        }
                     }
                     if (obstacle.x + obstacle.width <= right && obstacle.x + obstacle.width >= left) {
                         myObstacles = myObstacles.filter(function (item) {
                             return item !== obstacle
                         });
-                        console.log('collide', obstacle)
+                        console.log('collide', obstacle);
+                        switch (obstacle.category) {
+                            case "pomidor":
+                                counter -= 2;
+                                break;
+                            case "kubek":
+                                counter -= 1;
+                                break;
+                            case "kwiaty":
+                                counter += 2;
+                                break;
+                            case "misiek":
+                                counter += 5;
+                                break;
+                        }
                     }
                 }
             })
