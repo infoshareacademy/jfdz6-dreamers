@@ -31,7 +31,13 @@
         function drawCounter() {
             ctx.font = "30px Arial";
             ctx.fillStyle = "#f0f0f0";
-            ctx.fillText("Time to concert end: "+counter, 8, 80);
+            ctx.fillText("Czas: "+counter, 8, 80);
+        }
+        var score = 0;
+        function drawScore() {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "#f0f0f0";
+            ctx.fillText("Score: "+score, 1000, 80);
         }
 
         function startGame() {
@@ -137,15 +143,19 @@
                         switch (obstacle.category) {
                             case "pomidor":
                                 counter -= 2;
+                                score -= 2;
                                 break;
                             case "kubek":
                                 counter -= 1;
+                                score -= 1;
                                 break;
                             case "kwiaty":
                                 counter += 1;
+                                score += 1;
                                 break;
                             case "misiek":
                                 counter += 3;
+                                score +=3;
                                 break;
                         } return;
                     }
@@ -157,15 +167,19 @@
                         switch (obstacle.category) {
                             case "pomidor":
                                 counter -= 2;
+                                score -= 2;
                                 break;
                             case "kubek":
                                 counter -= 1;
+                                score -= 1;
                                 break;
                             case "kwiaty":
                                 counter += 2;
+                                score += 2;
                                 break;
                             case "misiek":
-                                counter += 5;
+                                counter += 3;
+                                score += 3;
                                 break;
                         } return;
                     }
@@ -197,6 +211,7 @@
             myVocalist.newPos();
             myVocalist.update();
             drawCounter();
+            drawScore();
             myObstacles.forEach(function (obstacle, index) {
                 obstacle.y += 10;
                 obstacle.update(index)
