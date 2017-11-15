@@ -147,7 +147,7 @@
                             case "misiek":
                                 counter += 3;
                                 break;
-                        }
+                        } return;
                     }
                     if (obstacle.x + obstacle.width <= right && obstacle.x + obstacle.width >= left) {
                         myObstacles = myObstacles.filter(function (item) {
@@ -167,7 +167,7 @@
                             case "misiek":
                                 counter += 5;
                                 break;
-                        }
+                        } return;
                     }
                 }
             })
