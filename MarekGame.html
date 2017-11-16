@@ -22,7 +22,7 @@
         var counter = 30;
         var gameCountdown = setInterval(function () {
             counter--;
-            if (counter === 0) {
+            if (counter === 0 || counter < 0) {
                 alert("Game Over!!");
                 clearInterval(gameCountdown);
                 document.location.reload();
@@ -38,6 +38,24 @@
             ctx.font = "30px Arial";
             ctx.fillStyle = "#f0f0f0";
             ctx.fillText("Score: "+score, 1000, 80);
+        }
+        var highScore = localStorage.getItem("highScore");
+
+        function verifyHighScore () {
+            if (highScore !== 0) {
+                if (score > highScore) {
+                    localStorage.setItem("highScore", score);
+                }
+            }
+            else {
+                localStorage.setItem("highScore", score);
+            }
+        }
+
+        function drawHighScore() {
+            ctx.font = "15px Arial";
+            ctx.fillStyle = "#f0f0f0";
+            ctx.fillText("High Score: "+highScore, 1000, 50);
         }
 
         function startGame() {
@@ -139,7 +157,6 @@
                         myObstacles = myObstacles.filter(function (item) {
                             return item !== obstacle
                         });
-                        console.log('collide', obstacle);
                         switch (obstacle.category) {
                             case "pomidor":
                                 counter -= 2;
@@ -163,7 +180,6 @@
                         myObstacles = myObstacles.filter(function (item) {
                             return item !== obstacle
                         });
-                        console.log('collide', obstacle);
                         switch (obstacle.category) {
                             case "pomidor":
                                 counter -= 2;
@@ -212,6 +228,8 @@
             myVocalist.update();
             drawCounter();
             drawScore();
+            drawHighScore();
+            verifyHighScore();
             myObstacles.forEach(function (obstacle, index) {
                 obstacle.y += 10;
                 obstacle.update(index)
