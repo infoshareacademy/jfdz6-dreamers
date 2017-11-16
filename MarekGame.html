@@ -19,6 +19,7 @@
         var myVocalist;
         var myBackground;
         var myObstacles = [];
+        var myMusic;
         var counter = 30;
         var gameCountdown = setInterval(function () {
             counter--;
@@ -62,6 +63,8 @@
             myGameArea.start();
             myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
             myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
+            myMusic = new sound("sound/tnt.mp3");
+            myMusic.play();
 
         }
 
@@ -148,6 +151,21 @@
             }
         ];
 
+        function sound(src) {
+            this.sound = document.createElement("audio");
+            this.sound.src = src;
+            this.sound.setAttribute("preload", "auto");
+            this.sound.setAttribute("controls", "none");
+            this.sound.style.display = "none";
+            document.body.appendChild(this.sound);
+            this.play = function(){
+                this.sound.play();
+            };
+            this.stop = function(){
+                this.sound.pause();
+            }
+        }
+        
         function detectCollision () {
             myObstacles.forEach(function (obstacle) {
                 if (obstacle.y + obstacle.height >= myVocalist.y && obstacle.y <= myVocalist.y + myVocalist.height/2) {
