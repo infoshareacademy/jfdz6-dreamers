@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    border-spacing: 0px;
+}
+
+body {
+    background-color: #000000;
+}
+
+h1,
+h2,
+div,
+div {
+    text-align: center;
+}
+
+@keyframes titleIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1, h2 {
+    animation-name: titleIn;
+    animation-duration: 2s;
+    transition-duration: 80ms;
+    color: white;
+    text-shadow: 0 0 5px white,
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px rgb(250, 175, 24),
+    0 0 70px rgb(250, 175, 24),
+    0 0 80px rgb(250, 175, 24),
+    0 0 100px rgb(250, 175, 24),
+    0 0 150px rgb(250, 175, 24);
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 3em;
+    margin-top: 1.6em;
+    margin-bottom: 0.4em;
+}
+
+div > table {
+    color: rgb(250, 175, 24);
+    border: 2px solid;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cell {
+    background-color: #202020;
+    max-width: 25px;
+    width: 25px;
+    max-height: 25px;
+    height: 25px;
+}
+
+.party {
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+}
+
+.bestparty {
+    background: orange;
+    color: white;
+    text-align: center;
+}
+
+.snake {
+    background: yellow;
+}
+
+.friends {
+    background: #00dae6;
+}
+
+.friendsInParty {
+    background: #00f3ff;
+}
+
+
+.aliens {
+    background: red;
+}
+
+.head {
+    background: lime;
+    background-image: url('https://cdn4.iconfinder.com/data/icons/penguin/154/penguin-baby-small-animal-512.png');
+    background-size: 25px 25px;
+}
+
+.enter {
+}
+
+#scores > table {
+    width: 480px;
+    font-size: 2.4em;
+    border: none;
+    text-align: left;
+}
+
+#scores > table > tr > td:last-child {
+    width: 180px;
+}
+
+#gameRules > p {
+    max-width: 800px;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 2em;
+    line-height: 1.1em;
+}
+
+.freeAlien {
+    background: red;
+}
+
+.showGameTime {
+    color: rgb(250, 175, 24);
+    display: block;
+    font-size: 3em;
+}
+
+.gameOver,
+.youWin {
+    position: fixed;
+    background-color: rgba(0,0,0,0.95);
+    padding-top: 30%;
+    padding-bottom: 50%;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.gameOver > div#statement {
+    color: red;
+    font-size: 8em;
+}
+
+.youWin > div#statement {
+    color: lime;
+    font-size: 8em;
+}
+
+
+
+.youWin > #saveScoreForm > form > p {
+    font-size: 2em;
+}
+
+.gameOver > button,
+.youWin > button,
+#scoresTopFive > button,
+#gameRules > button,
+.youWin > #saveScoreForm > form > button {
+    outline: none;
+    margin-top: 2em;
+    color: rgb(250, 175, 24);
+    height: 50px;
+    width: 180px;
+    font-size: 2em;
+    border: 2px solid;
+    background-color: black;
+}
+
+.gameOver > button:hover,
+.youWin > button:hover,
+#scoresTopFive > button:hover,
+#gameRules > button:hover,
+.youWin > #saveScoreForm > form > button:hover {
+    transform: scale(1.02);
+}
+
+.gameOver > button > a {
+    text-decoration: none;
+    color: rgb(250, 175, 24);
+}
+
+form > p,
+form > input {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    outline: none;
+    margin-top: 1em;
+    color: white;
+    height: 50px;
+    width: 280px;
+    font-size: 2em;
+    border: none;
+    background-color: black;
+}
+
+.test{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+
+
+#board,
+#saveScoreForm,
+#scoresTopFive,
+.showGameTime,
+.gameOver,
+.youWin {
+    display: none;
+}
