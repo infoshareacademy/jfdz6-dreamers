@@ -15,7 +15,6 @@
 <script>
     (function () {
         document.body.onload = startGame;
-
         var myVocalist;
         var myBackground;
         var myObstacles = [];
@@ -23,7 +22,7 @@
         var gameCountdown = setInterval(function () {
             counter--;
             if (counter === 0 || counter < 0) {
-                alert("Game Over!!");
+                alert("Koniec Koncertowania!!");
                 clearInterval(gameCountdown);
                 document.location.reload();
             }
@@ -146,6 +145,18 @@
                     return new Component(130, 150, "img/teddy-bear.png", pos, 0, "image", "misiek")
                 },
                 frequency: 300
+            },
+            {
+                create: function (pos) {
+                    return new Component(160, 130, "img/Bra.png", pos, 0, "image", "stanik")
+                },
+                frequency: 900
+            },
+            {
+                create: function (pos) {
+                    return new Component(90, 70, "img/mens-pants.png", pos, 0, "image", "majtki")
+                },
+                frequency: 700
             }
         ];
 
@@ -201,7 +212,15 @@
                                 break;
                             case "misiek":
                                 counter += 3;
-                                score +=3;
+                                score += 3;
+                                break;
+                            case "stanik":
+                                counter += 10;
+                                score += 10;
+                                break;
+                            case "majtki":
+                                counter -= 7;
+                                score -= 7;
                                 break;
                         } return;
                     }
@@ -225,6 +244,14 @@
                             case "misiek":
                                 counter += 3;
                                 score += 3;
+                                break;
+                            case "stanik":
+                                counter += 10;
+                                score += 10;
+                                break;
+                            case "majtki":
+                                counter -= 7;
+                                score -= 7;
                                 break;
                         } return;
                     }
