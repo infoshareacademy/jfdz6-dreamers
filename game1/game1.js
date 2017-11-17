@@ -12,18 +12,18 @@ function game1() {
     $("#myCarousel").addClass("hidden");
     $("#presentation").addClass("hidden");
 }
-function closeIt() {
-    console.log("CLOSE IT");
-    $("#myCarousel").removeClass("hidden");
-    $("#presentation").removeClass("hidden");
-    $("#game1").addClass("hidden");
-}
+
 function gameStart() {
     $("#starter").addClass("hidden");
     $("#game").removeClass("hidden");
+    $("#howto").removeClass("hidden");
     showScore();
 
 }
+
+$( "#howto" ).click(function() {
+    $( "#game" ).toggleClass( "hidden" );
+});
 
 function play(playerChoice) {
     $( "#buttons" ).fadeOut( "slow", function() {
@@ -100,7 +100,15 @@ var game = (function(){
             else{
                 console.log('No action');
             }
+            if(playerScore[playerScore.length] === 2) {
+                $('#next').addClass("hidden");
+                $("#result").text( $("#result").text()+" Game over. You win the whole game!");
+            }
+            else if(aiScore === 2) {
+                $('#next').addClass("hidden");
+                $("#result").text( $("#result").text()+" Game Over. Computer wins the whole game!");
 
+            }
         }
     }
 

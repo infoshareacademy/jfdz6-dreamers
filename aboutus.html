@@ -47,6 +47,10 @@
     <h4>O nas</h4>
     <hr>
         <div id="game1" class="game1 hidden">
+            <button id="howto" data-toggle="collapse" class="buttonEnabled hidden" data-target="#demo">How to win?</button>
+            <div id="demo" class="collapse">
+                <img src="game1/instruction.png" class="circle" alt="Instruction">
+            </div>
             <button id="starter" class="buttonEnabled" onclick="gameStart()">Start Playing</button>
             <div id="game" class="hidden">
                 <div id="scores" class="txtSize"></div>
@@ -59,7 +63,7 @@
                 </div>
                 <div id="pChoice" class="txtSize"></div>
                 <br><br>
-                <div id="next hidden"><button class="buttonEnabled" onclick="next()">Next round</button><button class="buttonEnabled" onclick="closeIt()">Close game</button>
+                <div id="next"><button class="buttonEnabled" onclick="next()">Next round</button><button class="buttonEnabled" onclick="location.href='aboutus.html'">Close game</button>
                 </div><br>
                 <div id="result" class="txtSize"></div>
             </div>

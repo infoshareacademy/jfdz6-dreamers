@@ -13,6 +13,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+
         var random1;
         var random2;
         if( document.location.href.match(/firstname/) ){
@@ -30,11 +31,26 @@
                 e.preventDefault();
                 var inputValue = $("#a3").val();
                 if (parseInt(inputValue) === (random1 + random2)) {
-                    $("input").val('');
-                    $("textarea").val('');
+
                     $("#success").fadeIn( "slow" );
                     setTimeout(function() {
-                        $("#success").fadeOut( "slow" );
+                        $.ajax({
+                            url: "https://formspree.io/dreamersisa@gmail.com",
+                            method: "POST",
+                            data: {
+                                firstname: $("#firstname").val(),
+                                email: $("#email").val(),
+                                message: $("#message").val()
+                            },
+                            dataType: "json"
+                        }).done(function() {
+                            $("#success").fadeOut( "slow" );
+                            $("input").val('');
+                            $("textarea").val('');
+                        })
+                                .fail(function() {
+                                    $("#fail").fadeOut( "slow" );
+                                });
                     }, 4000);
                 } else {
                     $("#fail").fadeIn( "slow" );
@@ -80,7 +96,7 @@
         <h3>Najlepsza wyszukiwarka - najlepsze Imprezy</h3>
         <!--Form content-->
         <div class="container-fluid">
-            <form action="contactus.html?mailsend">
+            <form action="https://formspree.io/dreamersisa@gmail.com" method="POST">
                 <hr>
                 <h4>Wyślij zapytanie.</h4>
                 <hr>
