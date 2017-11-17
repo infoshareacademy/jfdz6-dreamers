@@ -69,7 +69,7 @@ div > table {
     background: blue;
     color: white;
     text-align: center;
-    font-size: 23px;
+    font-size: 21px;
 }
 
 .bestparty {
@@ -84,21 +84,33 @@ div > table {
 
 .friends {
     background: #00dae6;
+    border-radius: 8px;
+    background-image: url('https://image.flaticon.com/icons/svg/565/565440.svg');
 }
 
 .friendsInParty {
     background: #00f3ff;
+    border-radius: 8px;
+    background-image: url('https://image.flaticon.com/icons/svg/565/565440.svg');
 }
-
 
 .aliens {
     background: red;
+    border-radius: 6px;
+    background-image: url('https://image.flaticon.com/icons/svg/131/131034.svg');
 }
 
 .head {
     background: lime;
-    background-image: url('https://cdn4.iconfinder.com/data/icons/penguin/154/penguin-baby-small-animal-512.png');
+    border-radius: 8px;
+    background-image: url('https://image.flaticon.com/icons/svg/565/565440.svg');
     background-size: 25px 25px;
+}
+
+.freeAlien {
+    background: red;
+    border-radius: 6px;
+    background-image: url('https://image.flaticon.com/icons/svg/131/131034.svg');
 }
 
 .enter {
@@ -124,10 +136,6 @@ div > table {
     line-height: 1.1em;
 }
 
-.freeAlien {
-    background: red;
-}
-
 .showGameTime {
     color: rgb(250, 175, 24);
     display: block;
@@ -147,7 +155,6 @@ div > table {
     transform: translate(-50%, -50%);
 }
 
-
 .gameOver > div#statement {
     color: red;
     font-size: 8em;
@@ -157,8 +164,6 @@ div > table {
     color: lime;
     font-size: 8em;
 }
-
-
 
 .youWin > #saveScoreForm > form > p {
     font-size: 2em;
@@ -214,8 +219,6 @@ form > input {
     height: 25px;
     color: white;
 }
-
-
 
 #board,
 #saveScoreForm,

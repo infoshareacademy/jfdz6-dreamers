@@ -247,7 +247,7 @@ function playGame() {
     function addPartyFriends(n) { // generating number of Friends in party places and info about them
         var addFriends = [];
         for (var i = 0; i < 4; i++) {
-            addFriends.push(Math.round(Math.random(0, 1) * 2 + 0));
+            addFriends.push(Math.round(Math.random(0, 1) * 1 + 1));
 //            $('.party' + (i + 1)).slice(0, 1).text(addFriends[i]);
             $('.party' + (i + 1)).slice(0, addFriends[i]).addClass('friendsInParty');
         }
