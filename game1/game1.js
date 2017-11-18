@@ -2,7 +2,6 @@ var playerScore =[0];
 var aiScore = 0;
 //
 // Game variables
-var playerChoice;
 var aiChoice;
 'use strict';
 
@@ -11,6 +10,7 @@ function game1() {
     $("#game1").removeClass("hidden");
     $("#myCarousel").addClass("hidden");
     $("#presentation").addClass("hidden");
+    $("#gameContainer").addClass("hidden");
 }
 
 function gameStart() {
