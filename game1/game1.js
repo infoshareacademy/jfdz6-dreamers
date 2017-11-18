@@ -2,7 +2,6 @@ var playerScore =[0];
 var aiScore = 0;
 //
 // Game variables
-var playerChoice;
 var aiChoice;
 'use strict';
 
