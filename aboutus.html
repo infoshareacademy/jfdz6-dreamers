@@ -50,6 +50,7 @@
             <button id="howto" data-toggle="collapse" class="buttonEnabled hidden" data-target="#demo">How to win?</button>
             <div id="demo" class="collapse">
                 <img src="game1/instruction.png" class="circle" alt="Instruction">
+                <p>Player with 3 victories wines the whole game.</p>
             </div>
             <button id="starter" class="buttonEnabled" onclick="gameStart()">Start Playing</button>
             <div id="game" class="hidden">
@@ -63,7 +64,7 @@
                 </div>
                 <div id="pChoice" class="txtSize"></div>
                 <br><br>
-                <div id="next"><button class="buttonEnabled" onclick="next()">Next round</button><button class="buttonEnabled" onclick="location.href='aboutus.html'">Close game</button>
+                <div id="next"><button id="nextBtn" class="buttonEnabled hidden" onclick="next()">Next round</button><button class="buttonEnabled" onclick="location.href='aboutus.html'">Close game</button>
                 </div><br>
                 <div id="result" class="txtSize"></div>
             </div>

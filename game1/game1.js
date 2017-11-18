@@ -55,6 +55,17 @@ function next() {
 
     });
 }
+function checkIfEnd() {
+    if(playerScore[playerScore.length-1] === 3) {
+        $('#nextBtn').addClass("hidden");
+        $("#result").text( $("#result").text()+" Game over. You win the whole game!");
+    }
+    else if(aiScore === 3) {
+        $('#nextBtn').addClass("hidden");
+        $("#result").text( $("#result").text()+" Game Over. Computer wins the whole game!");
+
+    }
+}
 //              0         1         2           3        4
 var names = [ 'Stone', 'Paper', 'Scissors', 'Lizard', 'Spock'];
 
@@ -79,6 +90,8 @@ var game = (function(){
     function checkPlayerWinning(playerM,aiM) {
         if (playerM===aiM) {
             showDraw("It's a draw!",playerM,aiM);
+            $("#nextTbn").removeClass("hidden");
+            checkIfEnd();
         }
         else {
             if(checkIfWins(playerM,aiM)){
@@ -86,29 +99,26 @@ var game = (function(){
                 var nr = playerScore[playerScore.length-1]+1;
                 console.log('nr',nr);
                 playerScore.push(nr);
+                $("#nextBtn").removeClass("hidden");
                 console.log('actuall score',playerScore);
                 if(playerScore[playerScore.length-1]> playerScore.length) {
                     $('body').append("<h1>Cheater</h1>");
                     playerScore[playerScore.length-1] = 0;
                 }
+                checkIfEnd();
 
             }
             else if(checkIfWins(aiM,playerM)) {
                 showResult('AI',aiM,playerM,'player');
                 aiScore++;
+                $("#nextBtn").removeClass("hidden");
+                checkIfEnd();
+
             }
             else{
                 console.log('No action');
             }
-            if(playerScore[playerScore.length] === 2) {
-                $('#next').addClass("hidden");
-                $("#result").text( $("#result").text()+" Game over. You win the whole game!");
-            }
-            else if(aiScore === 2) {
-                $('#next').addClass("hidden");
-                $("#result").text( $("#result").text()+" Game Over. Computer wins the whole game!");
 
-            }
         }
     }
 
