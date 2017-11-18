@@ -12,21 +12,20 @@
     </style>
 </head>
 <body>
+<img id="rules" src="img/rules.png"/>
 <script>
     (function () {
-        document.body.onload = startGame;
+        var gameCountdown;
+        var highway = new sound("Sound/highway.mp3");
+        var currentTrack = [new sound("Sound/thunder.mp3"),
+        new sound("Sound/tnt.mp3"),
+        new sound("Sound/Back in black.mp3")][0];
+        window.rules.onclick = startGame;
         var myVocalist;
         var myBackground;
         var myObstacles = [];
         var counter = 30;
-        var gameCountdown = setInterval(function () {
-            counter--;
-            if (counter === 0 || counter < 0) {
-                alert("Koniec Koncertowania!!");
-                clearInterval(gameCountdown);
-                document.location.reload();
-            }
-        }, 1000);
+
         function drawCounter() {
             ctx.font = "30px Arial";
             ctx.fillStyle = "#f0f0f0";
@@ -61,7 +60,20 @@
             myGameArea.start();
             myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
             myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
-            myMusic();
+            document.getElementById('rules').style.visibility = 'hidden';
+            currentTrack.play();
+            gameCountdown = setInterval(function () {
+                counter--;
+                if (counter === 10) {
+                    currentTrack.stop();
+                    highway.play();
+                }
+                if (counter === 0 || counter < 0) {
+                    alert("Koniec Koncertowania!! Jeszcze raz ?");
+                    clearInterval(gameCountdown);
+                    document.location.reload();
+                }
+            }, 1000);
 
         }
 
@@ -175,18 +187,6 @@
             }
         }
 
-        function myMusic () {
-            var tnt = new sound("sound/tnt.mp3");
-            var highway = new sound("sound/highway.mp3");
-            var thunder = new sound("sound/thunder.mp3");
-            var backInBlack = new sound("sound/Back in black.mp3");
-
-            if (counter <= 10) {
-                return highway.play();
-            } else {
-                return tnt.play();
-            }
-        }
 
         function detectCollision () {
             myObstacles.forEach(function (obstacle) {
