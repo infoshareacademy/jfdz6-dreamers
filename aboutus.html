@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/cookies.css">
     <link rel="stylesheet" href="css/memorygame.css">
+    <link rel="stylesheet" href="game1/game1.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -66,6 +67,30 @@
             </div>
         </div>
             <div id="myCarousel" class="carousel slide carouselSize hidden-md hidden-lg" data-ride="carousel">
+        <div id="game1" class="game1 hidden">
+            <button id="howto" data-toggle="collapse" class="buttonEnabled hidden" data-target="#demo">How to win?</button>
+            <div id="demo" class="collapse">
+                <img src="game1/instruction.png" class="circle" alt="Instruction">
+                <p>Player with 3 victories wines the whole game.</p>
+            </div>
+            <button id="starter" class="buttonEnabled" onclick="gameStart()">Start Playing</button>
+            <div id="game" class="hidden">
+                <div id="scores" class="txtSize"></div>
+                <div id="buttons">
+                    <button onclick="play(this.value)" class="buttons rock" name="input[]" value="0" >Rock</button>
+                    <button onclick="play(this.value)" class="buttons paper" name="input[]" value="1" >Paper</button>
+                    <button onclick="play(this.value)" class="buttons scissors" name="input[]" value="2" >Scissors</button>
+                    <button onclick="play(this.value)" class="buttons lizard" name="input[]" value="3" >Lizard</button>
+                    <button onclick="play(this.value)" class="buttons spock" name="input[]" value="4" >Spock</button>
+                </div>
+                <div id="pChoice" class="txtSize"></div>
+                <br><br>
+                <div id="next"><button id="nextBtn" class="buttonEnabled hidden" onclick="next()">Next round</button><button class="buttonEnabled" onclick="location.href='aboutus.html'">Close game</button>
+                </div><br>
+                <div id="result" class="txtSize"></div>
+            </div>
+        </div>
+        <div id="myCarousel" class="carousel slide carouselSize hidden-md hidden-lg" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -106,7 +131,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="container-fluid hidden-xs hidden-sm">
+        <div id="presentation" class="container-fluid hidden-xs hidden-sm">
             <div class="row">
                 <div class="col-md-6">
                     <div class="caption-style">
@@ -135,7 +160,7 @@
                         <figcaption>
                             <p>"Jedyna pewna rzecz w życiu to Zmiana!"</p>
                         </figcaption>
-                        <a href="#"></a>
+                        <a href="AndrewGame/AndrewGame.html"></a>
                     </div>
                 </div>
             </div>
@@ -152,7 +177,7 @@
                         <figcaption>
                             <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
                         </figcaption>
-                        <a href="#"></a>
+                        <a onclick="game1()" href="#"></a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -205,6 +230,8 @@
     </div>
 </footer>
 <script src="js/Cookies.js"></script>
+<script src="game1/game1.js"></script>
+
 <script src="js/memorygame.js"></script>
 </body>
 </html>
