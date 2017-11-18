@@ -8,7 +8,7 @@
         opacity: 0;
     }
     100% {
-        transform: translateY(40px);
+        transform: translateY(40px));
         opacity: 1;
     }
 }
@@ -48,27 +48,23 @@
     font-size: 2em;
 }
 
+@media screen and (min-width: 800px) {
 
-@media (min-width: 1024px) {
     .neon:hover,
     .neon-blick {
         transition-duration: 80ms;
         transform: scale(1.02);
         color: white;
-        text-shadow:
-                0 0 5px white,
-                0 0 10px white,
-                0 0 20px white,
-                0 0 40px rgb(250, 175, 24),
-                0 0 70px rgb(250, 175, 24),
-                0 0 80px rgb(250, 175, 24),
-                0 0 100px rgb(250, 175, 24),
-                0 0 150px rgb(250, 175, 24);
+        text-shadow: 0 0 5px white,
+        0 0 10px white,
+        0 0 20px white,
+        0 0 40px rgb(250, 175, 24),
+        0 0 70px rgb(250, 175, 24),
+        0 0 80px rgb(250, 175, 24),
+        0 0 100px rgb(250, 175, 24),
+        0 0 150px rgb(250, 175, 24);
     }
 }
-
-
-
 .product-list {
    font-size: 14px;
    padding-left: 22px;
