@@ -14,9 +14,10 @@ var $gameStart = $('#lemonGame');
 var $nextRound = $('.nextRound');
 var $endGame = $('#endGame');
 var $text = $('#text');
-var $level = $('#level')
-var $time = $('#time')
-var time = [0, 0, 0]
+var $level = $('#level');
+var $time = $('#time');
+var time = [0, 0, 0];
+var firstRound = true;
 
 setInterval(function () {
     $level.text('Poziom: ' + randomCounter)
@@ -35,15 +36,15 @@ $gameStart.click(function () {
 });
 
 $play.click(function () {
+    firstRound = false;
     startRound();
-    $(this).addClass('hidden');
-    $nextRound.removeClass('hidden')
 });
 
 $nextRound.click(function () {
-        randomCounter++
+    if (correct) {
+        randomCounter++;
         startRound();
-    }
+    }}
 );
 
 $replay.click(function () {
@@ -60,6 +61,9 @@ function startRound() {
         computerChoice.length = 0;
         playerCoice.length = 0;
         getRandomArray();
+        $play.addClass('hidden');
+        $nextRound.removeClass('hidden');
+        correct = false;
     }
     activePlay = false;
 }
@@ -73,8 +77,9 @@ function clearGame() {
     choiceEnabled = false;
     $play.removeClass('hidden');
     $nextRound.addClass('hidden');
-    textDisplay('Rozpoczni grę i powtarzaj ruchy')
-    time = [0, 0, 0]
+    textDisplay('Rozpoczni grę i powtarzaj ruchy');
+    time = [0, 0, 0];
+    firstRound = true;
 }
 
 function getRandomArray() {
@@ -103,14 +108,6 @@ function playerButton(num) {
     setTimeout(function () {
         $('#div' + num).animate({opacity: 0.2});
     }, 400);
-
-    // $('#div' + num)
-    //     .mousedown(function () {
-    //         $('#div' + num).animate({opacity: 1});
-    //     })
-    //     .mouseup(function () {
-    //         $('#div' + num).animate({opacity: 0.2})
-    //     })
 }
 
 function showComputerChice() {
@@ -120,7 +117,7 @@ function showComputerChice() {
         if (i === computerChoice.length - 1) {
             setTimeout(function () {
                 choiceEnabled = true;
-                textDisplay('Twój ruch')
+                textDisplay('Twój ruch');
                 timeCounter();
             }, 1000 + (computerChoice.length * 1000))
         }
@@ -139,12 +136,12 @@ function playerTurn(button) {
             if (computerSequence === playerSequence) {
                 correct = true;
                 activePlay = true;
-                textDisplay('Dobrze, przejdź do następnej rundy')
+                textDisplay('Dobrze, przejdź do następnej rundy');
                 timeCounter()
             } else {
                 correct = false;
                 activePlay = false;
-                textDisplay('Niestety źle, zacznij od nowa jeśli chcesz')
+                textDisplay('Niestety źle, zacznij od nowa jeśli chcesz');
                 $nextRound.addClass('hidden');
             }
         }
@@ -194,8 +191,10 @@ $(window).on('keydown', function (event) {
     } else if (code === 77 && choiceEnabled) {
         playerButton(4);
         playerTurn(4);
+    } else if (code === 16 && firstRound) {
+        $play.click();
     } else if (code === 16) {
-        startRound();
+        $nextRound.click()
     } else if (code === 27) {
         clearGame();
     }
@@ -203,14 +202,14 @@ $(window).on('keydown', function (event) {
 
 var timeInterval = setInterval(function () {
     timeCounter()
-}, 10)
+}, 10);
 
 function timeCounter() {
     if (choiceEnabled) {
         time[2]++;
         timeFormat()
     }
-};
+}
 
 function timeFormat() {
     if (time[2] === 100) {
@@ -223,4 +222,4 @@ function timeFormat() {
     }
 }
 
-var bestScores = {}
+var bestScores = {};
