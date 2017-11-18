@@ -1,0 +1,33 @@
+.rock{
+    background: url('0.png');
+}
+.paper{
+    background: url('1.png');
+}
+.scissors{
+    background: url('2.png');
+}
+.lizard{
+    background: url('3.png');
+}
+.spock{
+    background: url('4.png');"
+}
+.buttons{
+    height: 125px;
+    width: 125px;
+    background-size: 100% 100%;
+    color: black;
+
+}
+.txtSize{
+    font-size: 18px;
+}
+.game1{
+    height: 550px;
+}
+.buttonEnabled {
+    font-size: 21px;
+    background-color: black;
+    border-radius: 5px;
+}
