@@ -11,6 +11,7 @@ function game1() {
     $("#game1").removeClass("hidden");
     $("#myCarousel").addClass("hidden");
     $("#presentation").addClass("hidden");
+    $("#gameContainer").addClass("hidden");
 }
 
 function gameStart() {
