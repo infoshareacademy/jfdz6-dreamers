@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/cookies.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/product.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+
         var random1;
         var random2;
         if( document.location.href.match(/firstname/) ){
@@ -30,11 +32,26 @@
                 e.preventDefault();
                 var inputValue = $("#a3").val();
                 if (parseInt(inputValue) === (random1 + random2)) {
-                    $("input").val('');
-                    $("textarea").val('');
+
                     $("#success").fadeIn( "slow" );
                     setTimeout(function() {
-                        $("#success").fadeOut( "slow" );
+                        $.ajax({
+                            url: "https://formspree.io/dreamersisa@gmail.com",
+                            method: "POST",
+                            data: {
+                                firstname: $("#firstname").val(),
+                                email: $("#email").val(),
+                                message: $("#message").val()
+                            },
+                            dataType: "json"
+                        }).done(function() {
+                            $("#success").fadeOut( "slow" );
+                            $("input").val('');
+                            $("textarea").val('');
+                        })
+                                .fail(function() {
+                                    $("#fail").fadeOut( "slow" );
+                                });
                     }, 4000);
                 } else {
                     $("#fail").fadeIn( "slow" );
@@ -48,7 +65,7 @@
     </script>
 
 </head>
-<body class="contctus-page">
+<body class="contctus-page" id="top">
 <!-- Menu -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -76,14 +93,11 @@
 
 <section class="container flex">
     <div class="content-background flex-item">
-        <h2>Trójmiejski Kalendarz Imprez</h2>
-        <h3>Najlepsza wyszukiwarka - najlepsze Imprezy</h3>
+        <h1 class="product-title">Kontakt</h1>
+
         <!--Form content-->
         <div class="container-fluid">
-            <form action="contactus.html?mailsend">
-                <hr>
-                <h4>Wyślij zapytanie.</h4>
-                <hr>
+            <form action="https://formspree.io/dreamersisa@gmail.com" method="POST">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                     <div><input type="text" name="firstname" class="form-control" id="firstname" placeholder="Imię"
                                 required></div>
@@ -107,6 +121,7 @@
                         <p class="dreamersfail">Błąd!</p>
                         <p>Wpisz poprawną sumę.</p>
                     </div>
+                </div>
             </form>
         </div>
     </div>
@@ -135,6 +150,7 @@
         </div>    <p>® Dreamer Group Est. 2017</p>
     </div>
 </footer>
+<a href="#top" style="color: rgb(250, 175, 24); position: fixed; z-index: 999; bottom: 25px; right: 25px; text-decoration: none;" class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></a>
 
 <script src="js/Cookies.js"></script>
 </body>

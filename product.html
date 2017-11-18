@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Trójmiejski Kalendarz Imprez</title>
+    <title>O produkcie</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
@@ -156,11 +156,6 @@
         document.querySelectorAll('.neon').forEach(function (e) {
             setTimeout(function () {
                 $(e).toggleClass('neon-blick');
-//                if( e.className.indexOf('neon-blik') !== -1 ){
-//                    e.className = e.className.replace('neon-blik','');
-//                }else {
-//                    e.className += ' neon-blik';
-//                }
             }, delay += 80);
         });
 
@@ -170,5 +165,7 @@
         setTimeout(blick, 240);
     }());
 </script>
+<a href="#top" style="color: rgb(250, 175, 24); position: fixed; z-index: 999; bottom: 25px; right: 25px; text-decoration: none;" class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></a>
+
 </body>
 </html>
