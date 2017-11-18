@@ -17,9 +17,14 @@
     (function () {
         var gameCountdown;
         var highway = new sound("Sound/highway.mp3");
-        var currentTrack = [new sound("Sound/thunder.mp3"),
-        new sound("Sound/tnt.mp3"),
-        new sound("Sound/Back in black.mp3")][0];
+        var tracks = [
+            new sound("Sound/thunder.mp3"),
+            new sound("Sound/tnt.mp3"),
+            new sound("Sound/Back in black.mp3")
+        ]
+
+            var currentTrack = tracks[Math.floor(Math.random() * tracks.length)];
+
         window.rules.onclick = startGame;
         var myVocalist;
         var myBackground;
@@ -64,10 +69,14 @@
             currentTrack.play();
             gameCountdown = setInterval(function () {
                 counter--;
-                if (counter === 10) {
+                if (counter <= 10) {
                     currentTrack.stop();
                     highway.play();
-                }
+                } else {
+                    highway.stop();
+                    currentTrack.play();
+                };
+
                 if (counter === 0 || counter < 0) {
                     alert("Koniec Koncertowania!! Jeszcze raz ?");
                     clearInterval(gameCountdown);
