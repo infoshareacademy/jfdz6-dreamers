@@ -1,3 +1,5 @@
+(function () {
+
 var computerChoice = [];
 var randomCounter = 1;
 var $div1 = $('#div1');
@@ -22,6 +24,7 @@ var firstRound = true;
 setInterval(function () {
     $level.text('Poziom: ' + randomCounter)
 }, 100);
+
 setInterval(function () {
     $time.text('Twój czas: ' + time[0] + ':' + time[1] + ':' + time[2])
 }, 10);
@@ -32,7 +35,8 @@ function textDisplay(text) {
 
 $gameStart.click(function () {
     $("#gameContainer").removeClass("hidden");
-    textDisplay('Rozpoczni grę i powtarzaj ruchy')
+    textDisplay('Rozpoczni grę i powtarzaj ruchy');
+    $()
 });
 
 $play.click(function () {
@@ -86,7 +90,6 @@ function getRandomArray() {
     for (j = 0; j < randomCounter; j++) {
         computerChoice.push(Math.floor((Math.random() * 4)) + 1)
     }
-    console.log(computerChoice);
     showComputerChice();
 }
 
@@ -178,7 +181,6 @@ $div4.click(function () {
 
 $(window).on('keydown', function (event) {
     var code = event.keyCode;
-    console.log(code);
     if (code === 90 && choiceEnabled) {
         playerButton(1);
         playerTurn(1);
@@ -223,3 +225,5 @@ function timeFormat() {
 }
 
 var bestScores = {};
+
+})();
