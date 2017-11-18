@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/memorygame.css">
     <link rel="stylesheet" href="game1/game1.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -46,6 +47,26 @@
     <hr>
     <h4>O nas</h4>
     <hr>
+        <div id="gameContainer" class="hidden">
+            <h3 id="endGame">x</h3>
+            <div><h2 id=text></h2></div>
+            <div class="chooseContainer">
+                <h3 id=level></h3>
+                <h3 id=time></h3>
+            </div>
+            <div class="chooseContainer">
+                <div class="choose flex" id="div1"><h1><strong>Z</strong></h1></div>
+                <div class="choose flex" id="div2"><h1><strong>X</strong></h1></div>
+                <div class="choose flex" id="div3"><h1><strong>N</strong></h1></div>
+                <div class="choose flex" id="div4"><h1><strong>M</strong></h1></div>
+            </div>
+            <div>
+                <button class="play btn-success">Rozpocznij grę</button>
+                <button class="nextRound hidden btn-success">Następna runda</button>
+                <button class="repaly btn-warning">Od nowa</button>
+            </div>
+        </div>
+            <div id="myCarousel" class="carousel slide carouselSize hidden-md hidden-lg" data-ride="carousel">
         <div id="game1" class="game1 hidden">
             <button id="howto" data-toggle="collapse" class="buttonEnabled hidden" data-target="#demo">How to win?</button>
             <div id="demo" class="collapse">
@@ -169,9 +190,9 @@
                             </div>
                         </div>
                         <figcaption>
-                            <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+                            <p>"Rzeczą ważniejszą od wiedzy jest wyobraźnia." - Albert Einstein<br>Tego pierwszego też mi nie brakuje.</p>
                         </figcaption>
-                        <a href="#"></a>
+                        <a id="lemonGame" href="#"></a>
                     </div>
                 </div>
             </div>
@@ -211,5 +232,6 @@
 <script src="js/Cookies.js"></script>
 <script src="game1/game1.js"></script>
 
+<script src="js/memorygame.js"></script>
 </body>
 </html>
