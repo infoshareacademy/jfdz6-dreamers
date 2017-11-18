@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+}
+
+.choose {
+    display: flex;
+    float: left;
+    width: 100px;
+    height: 100px;
+    opacity: 0.2;
+    cursor: pointer;
+    margin: 15px;
+
+}
+
+#endGame {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#gameContainer {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.chooseContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#level, #time, .play, .nextRound, .repaly {
+    margin: 10px;
+}
+
+#div1 {
+    background-color: red;
+}
+
+#div2 {
+    background-color: green;
+}
+
+#div3 {
+    background-color: blue;
+}
+
+#div4 {
+    background-color: yellow;
+}

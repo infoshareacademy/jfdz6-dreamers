@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="AndrewGame.css">
+</head>
+<body>
+<h1>Best Party Snake</h1>
+<div id="gameRules">
+    <h2>Game rules</h2>
+    <p>Jesteś imprezowiczem <span class="head test"></span>.</p>
+    <p>Poszukujesz w lokalach swoich znajomych <span class="friends test"></span>, by zebrać ich wszystkich i zaprowadzić na najlepszą imprezę do miejsca "Best Party".</p>
+    <p>Niechcianych imprezowiczów <span class="aliens test"></span>, którzy dołączą do waszej grupy, zaprowadź do lokalu z wolnymi miejscami <span class="party test">2</span> i tam ich pozostaw.</p>
+    <p>
+        Wygrywasz, jeśli do miejsca "BestParty" <span class="bestparty test"></span> wejdziesz tylko ze swoimi znajomymi.
+    </p>
+    <button id="closeGameRules">Play game</button>
+</div>
+
+<div id="board"></div>
+<div class="showGameTime"></div>
+
+<div class="gameOver">
+    <div id="statement">GAME OVER</div>
+    <button id="playAgainAfterGameOver">Play again</button>
+    <button id="exitGame"><a href="../aboutus.html">Exit Game</a></button>
+</div>
+
+<div class="youWin">
+    <div id="statement">YOU WIN</div>
+    <div id="saveScoreForm">
+        <form >
+            <p>Enter your name to save score:</p>
+            <input type="text" value="" maxlength="16" autofocus/>
+            <button>Save score</button>
+        </form>
+    </div>
+    <div id="scoresTopFive">
+        <h2 id="scoresTitle">Best 5 scores</h2>
+        <div id="scores"></div>
+    </div>
+    <button id="playAgainAfterYouWin">Play again</button>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../AndrewGame/AndrewGame.js"></script>
+</body>
+</html>
