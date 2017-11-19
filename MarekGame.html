@@ -43,7 +43,7 @@
         function drawScore() {
             ctx.font = "30px Arial";
             ctx.fillStyle = "#f0f0f0";
-            ctx.fillText("Score: "+score, 1000, 80);
+            ctx.fillText("Wynik: "+score, 1000, 80);
         }
         var highScore = localStorage.getItem("highScore");
 
@@ -61,7 +61,7 @@
         function drawHighScore() {
             ctx.font = "15px Arial";
             ctx.fillStyle = "#f0f0f0";
-            ctx.fillText("High Score: "+highScore, 1000, 50);
+            ctx.fillText("Najlepszy Wynik: "+highScore, 1000, 50);
         }
 
         function startGame() {
@@ -69,7 +69,6 @@
             myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
             myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
             document.getElementById('rules').style.visibility = 'hidden';
-            currentTrack.play();
             gameCountdown = setInterval(function () {
                 counter--;
                 if (counter <= 10) {
@@ -174,13 +173,13 @@
                 create: function (pos) {
                     return new Component(160, 130, "img/Bra.png", pos, 0, "image", "stanik")
                 },
-                frequency: 900
+                frequency: 800
             },
             {
                 create: function (pos) {
                     return new Component(90, 70, "img/mens-pants.png", pos, 0, "image", "majtki")
                 },
-                frequency: 700
+                frequency: 650
             }
         ];
 
