@@ -45,7 +45,7 @@
             ctx.fillStyle = "#f0f0f0";
             ctx.fillText("Wynik: "+score, 1000, 80);
         }
-        var highScore = localStorage.getItem("highScore");
+        var highScore = localStorage.getItem("highScore") || 0;
 
         function verifyHighScore () {
             if (highScore !== 0) {
@@ -68,7 +68,7 @@
             myGameArea.start();
             myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
             myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
-            document.getElementById('rules').style.visibility = 'hidden';
+            document.getElementById('rules').remove();
             gameCountdown = setInterval(function () {
                 counter--;
                 if (counter <= 10) {
