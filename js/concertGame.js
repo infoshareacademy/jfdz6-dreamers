@@ -6,6 +6,7 @@ function concertGame() {
 }
 
 function startConcertGame() {
+    var myRules = document.getElementById("rules");
     var highway = new sound("Sound/highway.mp3");
     var tracks = [
         new sound("Sound/thunder.mp3"),
@@ -55,7 +56,7 @@ function startConcertGame() {
         myGameArea.start();
         myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
         myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
-        document.getElementById('rules').remove();
+        document.getElementById('rules-img').remove();
         gameCountdown = setInterval(function () {
             counter--;
             if (counter <= 10) {
@@ -81,7 +82,7 @@ function startConcertGame() {
             this.canvas.width = 1152;
             this.canvas.height = 868;
             this.context = this.canvas.getContext("2d");
-            document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+            myRules.insertBefore(this.canvas, myRules.childNodes[0]);
             this.interval = setInterval(updateGameArea, 20);
             this.frameNo = 0;
             window.addEventListener('keydown', function (e) {
