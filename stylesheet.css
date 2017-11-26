@@ -452,3 +452,7 @@ hr {
         min-height: 86vh;
     }
 }
+
+.nav>li {
+    font-weight: bold;
+}
