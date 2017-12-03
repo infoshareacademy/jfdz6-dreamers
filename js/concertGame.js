@@ -1,8 +1,12 @@
 function concertGame() {
+  if (window.matchMedia("(min-width: 1200px)").matches) {
     document.getElementById("rules").classList.remove("hidden");
     document.getElementById("myCarousel").classList.add("hidden");
     document.getElementById("presentation").classList.add("hidden");
     startConcertGame();
+  } else {
+    alert("Masz za małą rozdzielczość ekranu by włączyć grę!")
+  }
 }
 
 function startConcertGame() {
