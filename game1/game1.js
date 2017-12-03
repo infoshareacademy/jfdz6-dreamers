@@ -17,12 +17,16 @@ function gameStart() {
     $("#starter").addClass("hidden");
     $("#game").removeClass("hidden");
     $("#howto").removeClass("hidden");
+    $("#nextBtn").removeClass("hidden");
     showScore();
 
 }
-
+function bugFix0x0() {
+    $("#nextBtn").removeClass("hidden");
+}
 $( "#howto" ).click(function() {
     $( "#game" ).toggleClass( "hidden" );
+
 });
 
 function play(playerChoice) {
@@ -33,7 +37,7 @@ function play(playerChoice) {
         $imageA = "<img src='game1/"+aiChoice+".png' class='buttons'>";
         $("#pChoice").append($imageA);
         game.checkPlayerWinning(parseInt(playerChoice),aiChoice);
-        $("#next").removeClass("hidden");
+        $("#nextBtn").removeClass("hidden");
         if(playerScore[playerScore.length] > gameHistory.length){
             $('body').append("<h1>Cheater</h1>");
             playerScore = 0;
@@ -49,10 +53,9 @@ function play(playerChoice) {
 }
 function next() {
     $("#pChoice").empty();
+    $("#nextBtn").removeClass("hidden");
 
     $( "#buttons" ).fadeIn( "slow", function() {
-        $("#next").addClass("hidden");
-
     });
 }
 function checkIfEnd() {
@@ -90,8 +93,8 @@ var game = (function(){
     function checkPlayerWinning(playerM,aiM) {
         if (playerM===aiM) {
             showDraw("It's a draw!",playerM,aiM);
-            $("#nextTbn").removeClass("hidden");
             checkIfEnd();
+            $("#nextBtn").removeClass("hidden");
         }
         else {
             if(checkIfWins(playerM,aiM)){
@@ -117,12 +120,16 @@ var game = (function(){
             }
             else{
                 console.log('No action');
+                $("#nextBtn").removeClass("hidden");
+
             }
 
         }
     }
 
-
+    if(playerScore[playerScore.length-1] === 0 && aiScore === 0){
+        bugFix0x0();
+    }
     return {
         checkPlayerWinning : function(a,b){ checkPlayerWinning(a,b); }
     }
@@ -188,6 +195,7 @@ function showScore() {
 }
 function showDraw(txt,move1,move2) {
     $("#result").text( txt + ' No win between ' + names[move1] + ' & ' + names[move2]);
+    $("#nextBtn").removeClass("hidden");
 }
 function showResult(txt,move1,move2,txt2) {
     $("#result").text( txt + ' with ' + names[move1] + ' wins against '+ txt2 + ' with ' + names[move2]);
