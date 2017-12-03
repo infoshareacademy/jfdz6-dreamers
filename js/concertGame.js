@@ -76,7 +76,7 @@ function startConcertGame() {
             };
 
             if (counter === 0 || counter < 0) {
-                alert("Koniec Koncertowania!! Jeszcze raz ?");
+                alert("Koniec Koncertowania!! Twój wynik: "+score);
                 clearInterval(gameCountdown);
                 document.location.reload();
             }
