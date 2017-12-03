@@ -44,9 +44,17 @@
 <section class="container flex">
     <div class="content-background flex-item">
         <h1 class="product-title">O nas</h1>
+        <div id="infoContainer" class="alert alert-info hidden">
+            <h3>- Po rozpoczęciu gry komputer podświetli pola <br>
+                - Twoim zadaniem jest powtórzenie ruchu komputera <br>
+                - Ruchy możecz wykonywać klikając lub używając przycisków Z, X, N oraz M <br>
+                - Sprawdź swoją pamięć
+            </h3>
+        </div>
 
         <div id="gameContainer" class="hidden">
-            <h3 id="endGame">x</h3>
+            <h3 id="endGame"><i class="fa fa-times" aria-hidden="true"></i></h3>
+            <h3 id="infoGame"><i class="fa fa-info" aria-hidden="true"></i></h3>
             <div><h2 id=text></h2></div>
             <div class="chooseContainer">
                 <h3 id=level></h3>
