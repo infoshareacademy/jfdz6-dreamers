@@ -10,6 +10,7 @@ function concertGame() {
 }
 
 function startConcertGame() {
+  var gameCountdown = false;
     var myRules = document.getElementById("rules");
     var highway = new sound("Sound/highway.mp3");
     var tracks = [
@@ -57,6 +58,9 @@ function startConcertGame() {
     }
 
     function startGame() {
+      if( gameCountdown ){
+        return false;
+      }
         myGameArea.start();
         myVocalist = new Component(240, 330, "img/vocalist.png", 465, 540, "image");
         myBackground = new Component(1152, 868, "img/stage.png", 0, 0, "image");
